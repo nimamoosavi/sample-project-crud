@@ -12,9 +12,12 @@
     <artifactId>integration</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>integration</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Integration project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
+        <java.version>1.8</java.version>
+        <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
+        <org.projectlombok.version>1.18.8</org.projectlombok.version>
     </properties>
     <dependencies>
         <dependency>
@@ -32,6 +35,45 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.nicico.cost</groupId>
+            <artifactId>framework</artifactId>
+            <version>1.0.1-Released</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nicico.cost</groupId>
+            <artifactId>crud</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nicico.cost</groupId>
+            <artifactId>Jdbc-client</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.nicico.cost</groupId>
+            <artifactId>swagger</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mapstruct</groupId>
+                    <artifactId>mapstruct</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -39,13 +81,27 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.0.RELEASE</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- or newer version -->
                 <configuration>
-                    <excludes>
-                        <exclude>
+                    <source>1.8</source> <!-- depending on your project -->
+                    <target>1.8</target> <!-- depending on your project -->
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${org.mapstruct.version}</version>
+                        </path>
+                        <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                            <version>${org.projectlombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
