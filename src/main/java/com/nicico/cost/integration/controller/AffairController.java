@@ -1,6 +1,7 @@
 package com.nicico.cost.integration.controller;
 
 import com.nicico.cost.crud.controller.BaseController;
+import com.nicico.cost.framework.service.exception.ServiceException;
 import com.nicico.cost.integration.domain.entity.Affair;
 import com.nicico.cost.integration.domain.view.request.AffairReqVM;
 import com.nicico.cost.integration.domain.view.response.AffairResVM;
@@ -17,6 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "Integration", protocols = "HTTP")
 @SwaggerDefinition(tags = {@Tag(name = "Integration", description = "سرویس مدیریت اطلاعات")})
 @RequiredArgsConstructor
-public class AffairController extends BaseController<Affair, AffairReqVM, AffairResVM, Long> {
+public class AffairController extends BaseController<Affair, AffairReqVM, AffairResVM, Long, ServiceException> {
 
 }
