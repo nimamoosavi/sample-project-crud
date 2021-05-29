@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class UserResVM extends BaseResVM<Long> {
-    private String username;
-    private String password;
+public class AffairResVM extends BaseResVM<Long> {
+    private String name;
+    private String code;
 }

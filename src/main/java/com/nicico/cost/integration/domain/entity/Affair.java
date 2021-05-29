@@ -9,13 +9,13 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TBL_USER")
+@Table(name = "AFFAIR")
 @Setter
 @Getter
-public class User extends BaseEntity<Long> {
+public class Affair extends BaseEntity<Long> {
 
-    @Column(name = "USERNAME", length = 20, unique = true, nullable = false)
-    String username;
-    @Column(name = "PASSWORD", nullable = false)
-    String password;
+    @Column(name = "NAME", unique = true, nullable = false, length = 50)
+    private String name;
+    @Column(name = "CODE", unique = true, nullable = false, length = 50)
+    private String code;
 }

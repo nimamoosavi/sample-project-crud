@@ -6,11 +6,11 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Data
-public class UserReqVM {
+public class AffairReqVM {
     @NotNull
     @NotBlank
-    private String username;
+    private String name;
     @NotNull
     @NotBlank
-    private String password;
+    private String code;
 }
