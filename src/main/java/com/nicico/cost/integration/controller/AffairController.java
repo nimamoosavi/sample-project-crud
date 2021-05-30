@@ -1,6 +1,7 @@
 package com.nicico.cost.integration.controller;
 
 import com.nicico.cost.crud.controller.BaseController;
+import com.nicico.cost.framework.domain.dto.BaseDTO;
 import com.nicico.cost.framework.service.exception.ServiceException;
 import com.nicico.cost.integration.domain.entity.Affair;
 import com.nicico.cost.integration.domain.view.request.AffairReqVM;
@@ -9,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.SwaggerDefinition;
 import io.swagger.annotations.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +21,4 @@ import org.springframework.web.bind.annotation.RestController;
 @SwaggerDefinition(tags = {@Tag(name = "Integration", description = "سرویس مدیریت اطلاعات")})
 @RequiredArgsConstructor
 public class AffairController extends BaseController<Affair, AffairReqVM, AffairResVM, Long, ServiceException> {
-
 }
