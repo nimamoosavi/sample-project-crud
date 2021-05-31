@@ -20,5 +20,5 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "Integration", protocols = "HTTP")
 @SwaggerDefinition(tags = {@Tag(name = "Integration", description = "سرویس مدیریت اطلاعات")})
 @RequiredArgsConstructor
-public class AffairController extends BaseController<Affair, AffairReqVM, AffairResVM, Long, ServiceException> {
+public class AffairController extends BaseController<Affair, AffairReqVM, AffairResVM, Long> {
 }
