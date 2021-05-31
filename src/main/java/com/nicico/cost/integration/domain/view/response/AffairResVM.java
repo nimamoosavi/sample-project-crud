@@ -1,6 +1,6 @@
 package com.nicico.cost.integration.domain.view.response;
 
-import com.nicico.cost.crud.domain.view.BaseResVM;
+import com.nicico.cost.framework.domain.view.BaseResVM;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
