@@ -1,6 +1,6 @@
 package com.nicico.cost.integration.domain.entity;
 
-import com.nicico.cost.crud.domain.object.BaseObject;
+import com.nicico.cost.framework.packages.jdbc.base.BaseObject;
 import lombok.Getter;
 import lombok.Setter;
 
