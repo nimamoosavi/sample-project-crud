@@ -90,6 +90,11 @@
             <artifactId>swagger-models</artifactId>
             <version>1.5.21</version>
         </dependency>
+        <dependency>
+            <groupId>com.nicico.cost</groupId>
+            <artifactId>discovery-client</artifactId>
+            <version>1.0.1 Released</version>
+        </dependency>
 
 
     </dependencies>
