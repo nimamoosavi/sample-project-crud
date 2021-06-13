@@ -14,6 +14,7 @@ public class CostTypeJdbcService extends JdbcServiceImpl<CostType, Long> {
 
 
     public CostType findByCode(@NotNull String code) {
-        return costTypeRepository.findCostTypeByCode(code);
+        return costTypeRepository.findByCode(code);
     }
+
 }

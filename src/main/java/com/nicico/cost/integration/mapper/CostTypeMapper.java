@@ -9,5 +9,5 @@ import org.springframework.stereotype.Component;
 
 @Mapper(componentModel = "spring")
 @Component
-public abstract class CostTypeMapper extends GeneralMapper<CostType, CostTypeReqVM, CostTypeResVM,Long> {
+public abstract class CostTypeMapper extends GeneralMapper<CostType, CostTypeReqVM, CostTypeResVM> {
 }

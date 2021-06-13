@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CostTypeRepository extends JdbcRepository<CostType, Long> {
-    CostType findCostTypeByCode(String code);
+    CostType findByCode(String code);
 }
