@@ -2,8 +2,8 @@ package com.nicico.cost.integration.mapper;
 
 import com.nicico.cost.crud.mapper.GeneralMapper;
 import com.nicico.cost.integration.domain.entity.CostType;
-import com.nicico.cost.integration.domain.view.request.CostTypeReqVM;
-import com.nicico.cost.integration.domain.view.response.CostTypeResVM;
+import com.nicico.cost.integration.domain.view.costtype.CostTypeReqVM;
+import com.nicico.cost.integration.domain.view.costtype.CostTypeResVM;
 import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 

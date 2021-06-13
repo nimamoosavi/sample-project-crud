@@ -1,4 +1,4 @@
-package com.nicico.cost.integration.domain.view.response;
+package com.nicico.cost.integration.domain.view.costtype;
 
 import lombok.Data;
 
