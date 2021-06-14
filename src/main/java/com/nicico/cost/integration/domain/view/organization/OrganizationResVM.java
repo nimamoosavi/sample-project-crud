@@ -1,5 +1,6 @@
 package com.nicico.cost.integration.domain.view.organization;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.nicico.cost.integration.domain.entity.Department;
 import com.nicico.cost.integration.domain.entity.Organization;
 import lombok.Data;
@@ -12,6 +13,7 @@ public class OrganizationResVM {
 
     private Long id;
 
+    @JsonIgnore
     private Organization parentOrganization;
 
     private String organizationCode;
