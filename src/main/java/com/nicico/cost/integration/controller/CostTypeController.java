@@ -1,7 +1,9 @@
 package com.nicico.cost.integration.controller;
 
 import com.nicico.cost.crud.controller.BaseController;
+import com.nicico.cost.framework.anotations.Unauthorized;
 import com.nicico.cost.framework.domain.dto.BaseDTO;
+import com.nicico.cost.framework.enums.authorize.HttpRequestType;
 import com.nicico.cost.integration.domain.entity.CostType;
 import com.nicico.cost.integration.domain.view.costtype.CostTypeReqVM;
 import com.nicico.cost.integration.domain.view.costtype.CostTypeResVM;
@@ -20,6 +22,7 @@ import static com.nicico.cost.framework.config.general.GeneralStatic.*;
 @RequestMapping(value = "/rest/integration/v1/cost-type")
 @Api(value = "Cost-Type", protocols = "HTTP")
 @SwaggerDefinition(tags = {@Tag(name = "Cost-Type", description = "سرویس مدیریت اطلاعات پایه")})
+@Unauthorized(urls = {"/rest/integration/v1/cost-type/findByCode"})
 @RequiredArgsConstructor
 public class CostTypeController extends BaseController<CostType, CostTypeReqVM, CostTypeResVM, Long> {
 
