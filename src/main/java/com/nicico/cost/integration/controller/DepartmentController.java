@@ -49,7 +49,7 @@ public class DepartmentController extends BaseController<Department, DepartmentR
             @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
             @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
     @GetMapping(value = "/findByDepartmentCode")
-    public ResponseEntity<BaseDTO<DepartmentResVM>> findByDepartmentCode(@RequestParam String code) {
+    public ResponseEntity<BaseDTO<DepartmentResVM>> findByDepartmentCode(@RequestParam Long code) {
         return ResponseEntity.ok(departmentService.findByDepartmentCode(code));
     }
 }

@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface DepartmentRepository extends JdbcRepository<Department, Long> {
-    Optional<Department> findByDepartmentCode(String code);
+    Optional<Department> findByDepartmentCode(Long code);
 }

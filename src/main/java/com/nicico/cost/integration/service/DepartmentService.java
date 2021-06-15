@@ -20,7 +20,7 @@ public class DepartmentService extends GeneralService<Department, DepartmentReqV
 
     private final DepartmentJdbcService departmentJdbcService;
 
-    public BaseDTO<DepartmentResVM> findByDepartmentCode(@NotNull String code) {
+    public BaseDTO<DepartmentResVM> findByDepartmentCode(@NotNull Long code) {
         Department department = departmentJdbcService.findByDepartmentCode(code).orElseThrow(
                 () -> applicationException.createApplicationException(NOTFOUND, HttpStatus.NOT_FOUND)
         );

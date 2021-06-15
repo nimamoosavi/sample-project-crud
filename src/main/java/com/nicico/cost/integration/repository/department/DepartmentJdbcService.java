@@ -14,7 +14,7 @@ public class DepartmentJdbcService extends JdbcServiceImpl<Department, Long> {
 
     private final DepartmentRepository departmentRepository;
 
-    public Optional<Department> findByDepartmentCode(@NotNull String code) {
+    public Optional<Department> findByDepartmentCode(@NotNull Long code) {
         return departmentRepository.findByDepartmentCode(code);
     }
 }
