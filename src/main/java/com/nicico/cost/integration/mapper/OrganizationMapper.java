@@ -10,4 +10,6 @@ import org.springframework.stereotype.Component;
 @Mapper(componentModel = "spring")
 @Component
 public abstract class OrganizationMapper extends GeneralMapper<Organization, OrganizationReqVM, OrganizationResVM> {
+
+
 }

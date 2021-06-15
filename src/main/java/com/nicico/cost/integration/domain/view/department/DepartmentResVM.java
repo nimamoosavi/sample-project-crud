@@ -8,5 +8,4 @@ public class DepartmentResVM {
     private Long id;
     private Long departmentCode;
     private String departmentName;
-    private String departmentNameLatin;
 }

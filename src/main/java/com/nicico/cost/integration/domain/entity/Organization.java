@@ -3,22 +3,22 @@ package com.nicico.cost.integration.domain.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Formula;
+import org.hibernate.annotations.Subselect;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "ORGANIZATION")
 @Setter
 @Getter
-public class Organization{
+@Subselect("select * from organization")
+public class Organization {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ORG_ID")
     private Long id;
-
 
     @ManyToOne
     @JoinColumn(name = "ORG_PARENT_ID")
@@ -40,7 +40,6 @@ public class Organization{
     @Column(name = "ORG_DEACTIVE", length = 1, columnDefinition = "VARCHAR2(1)")
     private Boolean deActive;
 
-
     @Column(name = "CREATE_USER")
     private Long createUserId;
 
@@ -58,9 +57,6 @@ public class Organization{
 
     @Formula("case when ORG_BRANCH_FREE=0 then false else true end")
     private Boolean isFolder = true;
-
-    @OneToMany(mappedBy = "parentOrganization", cascade = CascadeType.ALL)
-    private List<Organization> children;
 
     @Column(name = "ORG_NUM")
     private Long orgNumber;
