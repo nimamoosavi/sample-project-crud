@@ -17,7 +17,9 @@ public class CostType {
     private Long id;
     @Column(name = "NAME")
     private String name;
-    @Column(name = "CODE")
+    @ManyToOne
+    private CostType parent;
+    @Column(name = "CODE",unique = true)
     private String code;
     @Column(name = "SORT")
     private Long sort;

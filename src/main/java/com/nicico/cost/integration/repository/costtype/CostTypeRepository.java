@@ -4,7 +4,15 @@ import com.nicico.cost.integration.domain.entity.CostType;
 import com.nicico.cost.jdbcclient.repository.JdbcRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
+
 @Repository
 public interface CostTypeRepository extends JdbcRepository<CostType, Long> {
-    CostType findByCode(String code);
+    Optional<CostType> findByCode(String code);
+
+    List<CostType> findAllByParent(CostType costType);
+
+    List<CostType> findAllByParentIsNull();
+
 }
