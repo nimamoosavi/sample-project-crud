@@ -54,6 +54,11 @@
             <artifactId>audit</artifactId>
             <version>1.0.2-Release</version>
         </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${org.mapstruct.version}</version>
+        </dependency>
 
         <!--SWAGGER-->
         <dependency>
