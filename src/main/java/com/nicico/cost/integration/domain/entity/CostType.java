@@ -14,7 +14,6 @@ public class CostType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
     private Long id;
     @Column(name = "NAME")
     private String name;
