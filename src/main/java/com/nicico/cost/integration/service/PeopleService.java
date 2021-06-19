@@ -34,51 +34,6 @@ public class PeopleService extends GeneralService<People, PeopleReqVM, PeopleRes
     }
 
 
-    public BaseDTO<List<PeopleResVM>> findByFirstName(@NotNull String firstName) {
-        List<People> peopleList = peopleJdbcService.findByFirstName(firstName);
-        return generalMapper.mapListBaseObjectToResponse(peopleList);
-    }
-
-    public BaseDTO<List<PeopleResVM>> findByFirstNameContaining(@NotNull String firstName) {
-        List<People> peopleList = peopleJdbcService.findByFirstNameContaining(firstName);
-        return generalMapper.mapListBaseObjectToResponse(peopleList);
-    }
-
-    public BaseDTO<PageDTO<List<PeopleResVM>>> findByFirstName(@NotNull String firstName, Integer page, Integer pageSize) {
-        Pageable pagination = pagination(page, pageSize);
-        Page<People> listPage = peopleJdbcService.findByFirstName(firstName, pagination);
-        return createPageableResponse(listPage);
-    }
-
-    public BaseDTO<PageDTO<List<PeopleResVM>>> findByFirstNameContaining(@NotNull String firstName, Integer page, Integer pageSize) {
-        Pageable pagination = pagination(page, pageSize);
-        Page<People> listPage = peopleJdbcService.findByFirstNameContaining(firstName, pagination);
-        return createPageableResponse(listPage);
-    }
-
-
-    public BaseDTO<List<PeopleResVM>> findByLastName(@NotNull String lastName) {
-        List<People> peopleList = peopleJdbcService.findByLastName(lastName);
-        return generalMapper.mapListBaseObjectToResponse(peopleList);
-    }
-
-    public BaseDTO<List<PeopleResVM>> findByLastNameContaining(@NotNull String lastName) {
-        List<People> peopleList = peopleJdbcService.findByLastNameContaining(lastName);
-        return generalMapper.mapListBaseObjectToResponse(peopleList);
-    }
-
-    public BaseDTO<PageDTO<List<PeopleResVM>>> findByLastName(@NotNull String firstName, Integer page, Integer pageSize) {
-        Pageable pagination = pagination(page, pageSize);
-        Page<People> listPage = peopleJdbcService.findByLastName(firstName, pagination);
-        return createPageableResponse(listPage);
-    }
-
-    public BaseDTO<PageDTO<List<PeopleResVM>>> findByLastNameContaining(@NotNull String firstName, Integer page, Integer pageSize) {
-        Pageable pagination = pagination(page, pageSize);
-        Page<People> listPage = peopleJdbcService.findByLastNameContaining(firstName, pagination);
-        return createPageableResponse(listPage);
-    }
-
 
     private Pageable pagination(int page, int pageSize) {
         return PageRequest.of(page - 1, pageSize);

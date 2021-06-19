@@ -13,20 +13,4 @@ import java.util.Optional;
 public interface PeopleRepository extends JdbcRepository<People, Long> {
     Optional<People> findByNationalCode(String nationalCode);
 
-    List<People> findAllByFirstName(String name);
-
-    List<People> findAllByFirstNameContaining(String name);
-
-    Page<People> findAllByFirstName(String name, Pageable pageable);
-
-    Page<People> findAllByFirstNameContaining(String name, Pageable pageable);
-
-    List<People> findAllByLastName(String lastName);
-
-    List<People> findAllByLastNameContaining(String lastName);
-
-    Page<People> findAllByLastName(String lastName, Pageable pageable);
-
-    Page<People> findAllByLastNameContaining(String lastName, Pageable pageable);
-
 }

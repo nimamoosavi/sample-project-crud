@@ -21,36 +21,4 @@ public class PeopleJdbcService extends JdbcServiceImpl<People, Long> {
         return peopleRepository.findByNationalCode(nationalCode);
     }
 
-    public List<People> findByFirstName(@NotNull String firstName) {
-        return peopleRepository.findAllByFirstName(firstName);
-    }
-
-    public List<People> findByFirstNameContaining(@NotNull String firstName) {
-        return peopleRepository.findAllByFirstNameContaining(firstName);
-    }
-
-    public Page<People> findByFirstName(@NotNull String firstName, Pageable pageable) {
-        return peopleRepository.findAllByFirstName(firstName,pageable);
-    }
-
-    public Page<People> findByFirstNameContaining(@NotNull String firstName, Pageable pageable) {
-        return peopleRepository.findAllByFirstNameContaining(firstName,pageable);
-    }
-
-    public List<People> findByLastName(@NotNull String lastName) {
-        return peopleRepository.findAllByLastName(lastName);
-    }
-
-    public List<People> findByLastNameContaining(@NotNull String lastName) {
-        return peopleRepository.findAllByFirstNameContaining(lastName);
-    }
-
-    public Page<People> findByLastName(@NotNull String lastName, Pageable pageable) {
-        return peopleRepository.findAllByLastName(lastName,pageable);
-    }
-
-    public Page<People> findByLastNameContaining(@NotNull String lastName, Pageable pageable) {
-        return peopleRepository.findAllByLastNameContaining(lastName,pageable);
-    }
-
 }
