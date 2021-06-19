@@ -3,17 +3,23 @@ package com.nicico.cost.integration.controller;
 import com.nicico.cost.crud.controller.BaseController;
 import com.nicico.cost.framework.anotations.Unauthorized;
 import com.nicico.cost.framework.domain.dto.BaseDTO;
+import com.nicico.cost.framework.domain.dto.PageDTO;
 import com.nicico.cost.framework.enums.authorize.HttpRequestType;
 import com.nicico.cost.integration.domain.entity.People;
 import com.nicico.cost.integration.domain.view.people.PeopleReqVM;
 import com.nicico.cost.integration.domain.view.people.PeopleResVM;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.SwaggerDefinition;
-import io.swagger.annotations.Tag;
+import com.nicico.cost.integration.service.PeopleService;
+import io.swagger.annotations.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+import static com.nicico.cost.framework.config.general.GeneralStatic.*;
 
 @RestController
 @RequestMapping(value = "/rest/integration/v1/people")
@@ -21,7 +27,8 @@ import org.springframework.web.bind.annotation.RestController;
 @SwaggerDefinition(tags = {@Tag(name = "People", description = "سرویس مدیریت افراد")})
 @Unauthorized(types = {HttpRequestType.POST, HttpRequestType.DELETE, HttpRequestType.PUT})
 @RequiredArgsConstructor
-public class PeopleController extends BaseController<People, PeopleReqVM, PeopleResVM,Long> {
+public class PeopleController extends BaseController<People, PeopleReqVM, PeopleResVM, Long> {
+    private final PeopleService peopleService;
 
     @Override
     public ResponseEntity<BaseDTO<PeopleResVM>> create(PeopleReqVM peopleReqVM) {
@@ -36,5 +43,78 @@ public class PeopleController extends BaseController<People, PeopleReqVM, People
     @Override
     public ResponseEntity<BaseDTO<Boolean>> deleteById(Long id) {
         return super.deleteById(id);
+    }
+
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/findBy/nationalCode")
+    public ResponseEntity<BaseDTO<PeopleResVM>> findByNationalCode(@RequestParam String nationalCode) {
+        return ResponseEntity.ok(peopleService.findByNationalCode(nationalCode));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/findBy/firstName")
+    public ResponseEntity<BaseDTO<List<PeopleResVM>>> findByFirstName(@RequestParam String firstName) {
+        return ResponseEntity.ok(peopleService.findByFirstName(firstName));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/findBy/containing/firstName")
+    public ResponseEntity<BaseDTO<List<PeopleResVM>>> findByFirstNameContaining(@RequestParam String firstName) {
+        return ResponseEntity.ok(peopleService.findByFirstNameContaining(firstName));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/findBy/pagination/firstName")
+    public ResponseEntity<BaseDTO<PageDTO<List<PeopleResVM>>>> findByFirstName(@RequestParam String firstName, @RequestParam Integer page, @RequestParam Integer pageSize) {
+        return ResponseEntity.ok(peopleService.findByFirstName(firstName, page, pageSize));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/findBy/pagination/containing/firstName")
+    public ResponseEntity<BaseDTO<PageDTO<List<PeopleResVM>>>> findByFirstNameContaining(@RequestParam String firstName, @RequestParam Integer page, @RequestParam Integer pageSize) {
+        return ResponseEntity.ok(peopleService.findByFirstNameContaining(firstName, page, pageSize));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/findBy/lastName")
+    public ResponseEntity<BaseDTO<List<PeopleResVM>>> findByLastName(@RequestParam String lastName) {
+        return ResponseEntity.ok(peopleService.findByLastName(lastName));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/findBy/containing/lastName")
+    public ResponseEntity<BaseDTO<List<PeopleResVM>>> findByLastNameContaining(@RequestParam String lastName) {
+        return ResponseEntity.ok(peopleService.findByLastNameContaining(lastName));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/findBy/pagination/lastName")
+    public ResponseEntity<BaseDTO<PageDTO<List<PeopleResVM>>>> findByLastName(@RequestParam String lastName, @RequestParam Integer page, @RequestParam Integer pageSize) {
+        return ResponseEntity.ok(peopleService.findByLastName(lastName, page, pageSize));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/findBy/pagination/containing/lastName")
+    public ResponseEntity<BaseDTO<PageDTO<List<PeopleResVM>>>> findByLastNameContaining(@RequestParam String lastName, @RequestParam Integer page, @RequestParam Integer pageSize) {
+        return ResponseEntity.ok(peopleService.findByLastNameContaining(lastName, page, pageSize));
     }
 }
