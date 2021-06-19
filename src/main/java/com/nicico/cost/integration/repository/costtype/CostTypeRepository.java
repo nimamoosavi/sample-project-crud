@@ -10,4 +10,8 @@ import java.util.Optional;
 @Repository
 public interface CostTypeRepository extends JdbcRepository<CostType, Long> {
     Optional<CostType> findByCode(String code);
+
+    List<CostType> findAllByParent(CostType costType);
+
+    List<CostType> findAllByParentIsNull();
 }

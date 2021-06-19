@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 import static com.nicico.cost.framework.config.general.GeneralStatic.*;
 
 @RestController
@@ -31,6 +33,30 @@ public class CostTypeController extends BaseController<CostType, CostTypeReqVM, 
     @GetMapping(value = "/findByCode")
     public ResponseEntity<BaseDTO<CostTypeResVM>> findByCode(@RequestParam String code) {
         return ResponseEntity.ok(costTypeService.findByCode(code));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping(value = "/findAllByParentCode")
+    public ResponseEntity<BaseDTO<List<CostTypeResVM>>> findAllByParentCode(@RequestParam String code) {
+        return ResponseEntity.ok(costTypeService.findAllByParentCode(code));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping(value = "/findAllByParentId")
+    public ResponseEntity<BaseDTO<List<CostTypeResVM>>> findAllByParentId(@RequestParam Long id) {
+        return ResponseEntity.ok(costTypeService.findAllByParentId(id));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping(value = "/findAllParents")
+    public ResponseEntity<BaseDTO<List<CostTypeResVM>>> findAllParents() {
+        return ResponseEntity.ok(costTypeService.findAllParents());
     }
 
 }

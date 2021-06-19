@@ -26,4 +26,12 @@ public class CostTypeJdbcService extends JdbcServiceImpl<CostType, Long> {
                 () -> applicationException.createApplicationException(NOTFOUND, HttpStatus.NOT_FOUND)
         );
     }
+
+    public List<CostType> findAllByParent(@NotNull CostType parent) {
+        return costTypeRepository.findAllByParent(parent);
+    }
+
+    public List<CostType> findAllParent() {
+        return costTypeRepository.findAllByParentIsNull();
+    }
 }
