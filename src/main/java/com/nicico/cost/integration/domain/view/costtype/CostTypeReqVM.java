@@ -13,7 +13,7 @@ public class CostTypeReqVM {
     @NotNull
     @NotBlank
     private String code;
-    private Long parentId;
+    private String description;
     @NotNull
     private Long sort;
 }

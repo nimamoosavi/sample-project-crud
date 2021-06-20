@@ -6,7 +6,7 @@ import lombok.Data;
 public class CostTypeResVM {
     private Long id;
     private String name;
+    private String description;
     private String code;
-    private Long parentId;
     private Long sort;
 }

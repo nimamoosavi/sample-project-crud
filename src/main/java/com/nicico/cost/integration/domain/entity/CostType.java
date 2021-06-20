@@ -17,10 +17,10 @@ public class CostType {
     private Long id;
     @Column(name = "NAME")
     private String name;
+    @Column(name = "DESCRIPTION")
+    private String description;
     @Column(name = "CODE",unique = true)
     private String code;
-    @ManyToOne
-    private CostType parent;
     @Column(name = "SORT")
     private Long sort;
 }

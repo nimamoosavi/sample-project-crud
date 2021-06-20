@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/rest/integration/v1/organization")
 @Api(value = "Cost-Type", protocols = "HTTP")
-@SwaggerDefinition(tags = {@Tag(name = "organization", description = "سرویس مدیریت امورات")})
+@SwaggerDefinition(tags = {@Tag(name = "organization", description = "سرویس مدیریت سازمان ها")})
 @Unauthorized(types = {HttpRequestType.POST, HttpRequestType.DELETE, HttpRequestType.PUT})
 @RequiredArgsConstructor
 public class OrganizationController extends BaseController<Organization, OrganizationReqVM, OrganizationResVM, Long> {
