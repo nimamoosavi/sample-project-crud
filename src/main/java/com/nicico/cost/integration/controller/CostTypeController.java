@@ -21,7 +21,7 @@ import static com.nicico.cost.framework.config.general.GeneralStatic.*;
 @Api(value = "Cost-Type", protocols = "HTTP")
 @SwaggerDefinition(tags = {@Tag(name = "Cost-Type", description = "سرویس مدیریت اطلاعات پایه")})
 @RequiredArgsConstructor
-public class CostTypeController extends BaseController<CostType, CostTypeReqVM, CostTypeResVM, Long> {
+public class CostTypeController extends BaseController<CostTypeReqVM, CostTypeResVM, Long> {
 
     private final CostTypeService costTypeService;
 

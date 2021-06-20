@@ -25,7 +25,7 @@ import static com.nicico.cost.framework.config.general.GeneralStatic.CLIENT_VERS
 @SwaggerDefinition(tags = {@Tag(name = "Department", description = "سرویس مدیریت اطلاعات بخش ها")})
 @Unauthorized(types = {HttpRequestType.POST, HttpRequestType.DELETE, HttpRequestType.PUT})
 @RequiredArgsConstructor
-public class DepartmentController extends BaseController<Department, DepartmentReqVM, DepartmentResVM, Long> {
+public class DepartmentController extends BaseController<DepartmentReqVM, DepartmentResVM, Long> {
 
     private final DepartmentService departmentService;
 

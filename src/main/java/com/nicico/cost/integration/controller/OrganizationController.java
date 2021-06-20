@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SwaggerDefinition(tags = {@Tag(name = "organization", description = "سرویس مدیریت سازمان ها")})
 @Unauthorized(types = {HttpRequestType.POST, HttpRequestType.DELETE, HttpRequestType.PUT})
 @RequiredArgsConstructor
-public class OrganizationController extends BaseController<Organization, OrganizationReqVM, OrganizationResVM, Long> {
+public class OrganizationController extends BaseController<OrganizationReqVM, OrganizationResVM, Long> {
     @Override
     public ResponseEntity<BaseDTO<OrganizationResVM>> create(OrganizationReqVM organizationReqVM) {
         return super.create(organizationReqVM);
