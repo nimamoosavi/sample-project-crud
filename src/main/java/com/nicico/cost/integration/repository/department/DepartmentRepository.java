@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface DepartmentRepository extends JdbcRepository<Department, Long> {
+interface DepartmentRepository extends JdbcRepository<Department, Long> {
     Optional<Department> findByDepartmentCode(Long code);
 }

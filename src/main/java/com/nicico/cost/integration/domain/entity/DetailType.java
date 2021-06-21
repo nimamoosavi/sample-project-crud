@@ -4,7 +4,6 @@ import lombok.Data;
 import org.hibernate.annotations.Subselect;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
 @Entity
@@ -26,7 +25,4 @@ public class DetailType {
 
     @Column(name = "DET_TYPE_NAME_EN", nullable = false)
     private String nameEN;
-
-    @ManyToMany(mappedBy = "detailTypes", fetch = FetchType.LAZY)
-    private Set<Detail> details;
 }

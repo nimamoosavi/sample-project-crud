@@ -8,6 +8,6 @@ import com.nicico.cost.integration.service.DetailTypeService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DetailTypeServiceImpl extends GeneralServiceImpl<DetailType, DetailTypeReqVM, DetailTypeResVM, Long> implements DetailTypeService {
+class DetailTypeServiceImpl extends GeneralServiceImpl<DetailType, DetailTypeReqVM, DetailTypeResVM, Long> implements DetailTypeService {
 
 }

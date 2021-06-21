@@ -5,5 +5,5 @@ import com.nicico.cost.jdbcclient.repository.JdbcRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DetailTypeRepository extends JdbcRepository<DetailType, Long> {
+interface DetailTypeRepository extends JdbcRepository<DetailType, Long> {
 }

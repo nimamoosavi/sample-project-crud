@@ -7,7 +7,7 @@ import org.hibernate.annotations.Subselect;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
+
 
 @Getter
 @Setter
@@ -27,7 +27,7 @@ public class Detail {
     private Detail parentDetail;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "TBL_DETAIL_TYPE_RELATION",
+    @JoinTable(name = "DETAIL_TYPE_RELATION",
             joinColumns = @JoinColumn(name = "DET_ID", foreignKey = @ForeignKey(name = "FK_DETAIL_TYPE")),
             inverseJoinColumns = @JoinColumn(name = "TYPE_ID", foreignKey = @ForeignKey(name = "FK_TYPE_DETAIL")))
 
@@ -36,7 +36,6 @@ public class Detail {
 
     @Column(name = "DET_NUM", precision = 20)
     private Long detailNumber;
-
 
     @Column(name = "DET_DETAILNAME", nullable = false, length = 255)
     private String detailName;
@@ -98,38 +97,10 @@ public class Detail {
     @Column(name = "DET_BRANCH_FREE")
     private Boolean branchFree;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DET_DEPARTMENT_ID")
-    private Department department;
-
-    @Column(name = "DET_UNIT_STATE", columnDefinition = "NUMBER(19)")
-    private String unitState;
-
-
-    @Column(name = "DET_CURRENCY_STATE", columnDefinition = "NUMBER(19)")
-    private String currencyState;
 
     @Column(name = "DET_BLOCKED")
     private String blocked = String.valueOf(Boolean.FALSE);
 
-    @Column(name = "DET_ACTION_CONTROL")
-    private String actionControl;
-
-
-    @Column(name = "CREATE_USER")
-    private Long createUserId;
-
-    @Column(name = "CREATE_DATE")
-    private String createDate;
-
-    @Column(name = "EDIT_USER")
-    private Long editUser;
-
-    @Column(name = "EDIT_DATE")
-    private String editDate;
-
-    @Transient
-    private Long parentId;
 
     @Formula("case when DET_CHILDRENDIGITCOUNT=0 then false else true end")
     private Boolean isFolder;

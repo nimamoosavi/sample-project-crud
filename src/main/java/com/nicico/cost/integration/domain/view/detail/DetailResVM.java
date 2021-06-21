@@ -13,12 +13,9 @@ public class DetailResVM {
 
     private Long parentDetailId;
 
-
     private List<DetailTypeResVM> detailTypeResVMS;
 
-
     private Long detailNumber;
-
 
     private String detailName;
 
@@ -53,16 +50,6 @@ public class DetailResVM {
     private Long level;
 
     private Boolean dashChildrenCode;
-
-    private Boolean branchFree;
-
-
-    private DepartmentResVM departmentResVM;
-
-    private String unitState;
-
-
-    private String currencyState;
 
     private String blocked;
 

@@ -4,7 +4,6 @@ import com.nicico.cost.crud.controller.BaseController;
 import com.nicico.cost.framework.anotations.Unauthorized;
 import com.nicico.cost.framework.domain.dto.BaseDTO;
 import com.nicico.cost.framework.enums.authorize.HttpRequestType;
-import com.nicico.cost.integration.domain.entity.People;
 import com.nicico.cost.integration.domain.view.people.PeopleReqVM;
 import com.nicico.cost.integration.domain.view.people.PeopleResVM;
 import com.nicico.cost.integration.service.PeopleService;
