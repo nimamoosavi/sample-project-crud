@@ -9,5 +9,5 @@ import com.nicico.cost.integration.service.OrganizationService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class OrganizationServiceImpl extends GeneralServiceImpl<Organization, OrganizationReqVM, OrganizationResVM, Long> implements OrganizationService {
+class OrganizationServiceImpl extends GeneralServiceImpl<Organization, OrganizationReqVM, OrganizationResVM, Long> implements OrganizationService {
 }

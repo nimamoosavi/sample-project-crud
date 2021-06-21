@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Table(name = "COST_TYPE")
 @Setter
 @Getter
-public class CostType {
+public class AccMap {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,8 +19,8 @@ public class CostType {
     private String name;
     @Column(name = "DESCRIPTION")
     private String description;
-    @Column(name = "CODE",unique = true)
-    private String code;
-    @Column(name = "SORT")
-    private Long sort;
+    @ManyToOne
+    @JoinColumn(name = "DETAIL_TYPE_ID")
+    private DetailType detailType;
+
 }

@@ -17,7 +17,7 @@ import static com.nicico.cost.framework.enums.exception.ExceptionEnum.NOTFOUND;
 
 @Service
 @RequiredArgsConstructor
-public class PeopleServiceImpl extends GeneralServiceImpl<People, PeopleReqVM, PeopleResVM, Long> implements PeopleService {
+class PeopleServiceImpl extends GeneralServiceImpl<People, PeopleReqVM, PeopleResVM, Long> implements PeopleService {
     private final PeopleJdbcService peopleJdbcService;
 
     public BaseDTO<PeopleResVM> findByNationalCode(@NotNull String nationalCode) {

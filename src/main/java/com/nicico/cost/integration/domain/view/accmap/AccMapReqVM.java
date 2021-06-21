@@ -1,4 +1,4 @@
-package com.nicico.cost.integration.domain.view.costtype;
+package com.nicico.cost.integration.domain.view.accmap;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Data
-public class CostTypeReqVM {
+public class AccMapReqVM {
     @NotNull
     @NotBlank
     private String name;

@@ -17,7 +17,7 @@ import static com.nicico.cost.framework.enums.exception.ExceptionEnum.NOTFOUND;
 
 @Service
 @RequiredArgsConstructor
-public class DepartmentServiceImpl extends GeneralServiceImpl<Department, DepartmentReqVM, DepartmentResVM, Long> implements DepartmentService {
+class DepartmentServiceImpl extends GeneralServiceImpl<Department, DepartmentReqVM, DepartmentResVM, Long> implements DepartmentService {
 
     private final DepartmentJdbcService departmentJdbcService;
 

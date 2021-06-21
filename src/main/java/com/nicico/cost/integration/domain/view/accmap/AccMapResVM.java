@@ -1,9 +1,9 @@
-package com.nicico.cost.integration.domain.view.costtype;
+package com.nicico.cost.integration.domain.view.accmap;
 
 import lombok.Data;
 
 @Data
-public class CostTypeResVM {
+public class AccMapResVM {
     private Long id;
     private String name;
     private String description;
