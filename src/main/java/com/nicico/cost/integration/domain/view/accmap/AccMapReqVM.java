@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Data
 public class AccMapReqVM {
+    private Long id;
     @NotNull
     @NotBlank
     private String name;
@@ -14,6 +15,5 @@ public class AccMapReqVM {
     @NotBlank
     private String code;
     private String description;
-    @NotNull
-    private Long sort;
+    private Long detailTypeId;
 }

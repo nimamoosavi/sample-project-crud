@@ -11,4 +11,5 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapResVM, Long> implements AccMapService {
+
 }

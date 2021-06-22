@@ -20,10 +20,10 @@ public abstract class DetailMapper extends GeneralMapper<Detail, DetailReqVM, De
     DepartmentMapper departmentMapper;
 
     @AfterMapping
-    public void afterMappingBaseObjectToResponseModel(@MappingTarget DetailResVM detailResVM, Detail target) {
-        if (target.getParentDetail() != null)
-            detailResVM.setParentDetailId(target.getParentDetail().getId());
-        if (!target.getDetailTypes().isEmpty())
-            detailResVM.setDetailTypeResVMS(detailTypeMapper.mapListBaseObjectToResponse(target.getDetailTypes()).getData());
+    public void afterMappingBaseObjectToResponseModel(@MappingTarget DetailResVM detailResVM, Detail source) {
+        if (source.getParentDetail() != null)
+            detailResVM.setParentDetailId(source.getParentDetail().getId());
+        if (!source.getDetailTypes().isEmpty())
+            detailResVM.setDetailTypeResVMS(detailTypeMapper.mapListBaseObjectToResponse(source.getDetailTypes()).getData());
     }
 }
