@@ -26,6 +26,8 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
     private final AccMapJdbcService accMapJdbcService;
     private final DetailTypeService detailTypeService;
 
+
+
     @Override
     public BaseDTO<AccMapResVM> mapDetailTypeToAcc(AccMapDetailType mapDetailType) {
         AccMap accMap = accMapJdbcService.findById(mapDetailType.getAccMapId()).orElseThrow(

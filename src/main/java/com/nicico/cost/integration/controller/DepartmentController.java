@@ -4,7 +4,6 @@ import com.nicico.cost.crud.controller.BaseController;
 import com.nicico.cost.framework.anotations.Unauthorized;
 import com.nicico.cost.framework.domain.dto.BaseDTO;
 import com.nicico.cost.framework.enums.authorize.HttpRequestType;
-import com.nicico.cost.integration.domain.entity.Department;
 import com.nicico.cost.integration.domain.view.department.DepartmentReqVM;
 import com.nicico.cost.integration.domain.view.department.DepartmentResVM;
 import com.nicico.cost.integration.service.DepartmentService;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import static com.nicico.cost.framework.config.general.GeneralStatic.*;
-import static com.nicico.cost.framework.config.general.GeneralStatic.CLIENT_VERSION;
 
 @RestController
 @RequestMapping(value = "/rest/integration/v1/department")

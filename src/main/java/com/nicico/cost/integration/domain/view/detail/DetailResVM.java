@@ -1,6 +1,5 @@
 package com.nicico.cost.integration.domain.view.detail;
 
-import com.nicico.cost.integration.domain.view.department.DepartmentResVM;
 import com.nicico.cost.integration.domain.view.detailtype.DetailTypeResVM;
 import lombok.Data;
 

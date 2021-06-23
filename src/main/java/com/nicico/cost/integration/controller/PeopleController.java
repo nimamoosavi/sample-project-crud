@@ -26,6 +26,14 @@ import static com.nicico.cost.framework.config.general.GeneralStatic.*;
 public class PeopleController extends BaseController<PeopleReqVM, PeopleResVM, Long> {
     private final PeopleService peopleService;
 
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/findBy/nationalCode")
+    public ResponseEntity<BaseDTO<PeopleResVM>> findByNationalCode(@RequestParam String nationalCode) {
+        return ResponseEntity.ok(peopleService.findByNationalCode(nationalCode));
+    }
+
     @Override
     public ResponseEntity<BaseDTO<PeopleResVM>> create(PeopleReqVM peopleReqVM) {
         return super.create(peopleReqVM);
@@ -41,12 +49,4 @@ public class PeopleController extends BaseController<PeopleReqVM, PeopleResVM, L
         return super.deleteById(id);
     }
 
-
-    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
-            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
-            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
-    @GetMapping("/findBy/nationalCode")
-    public ResponseEntity<BaseDTO<PeopleResVM>> findByNationalCode(@RequestParam String nationalCode) {
-        return ResponseEntity.ok(peopleService.findByNationalCode(nationalCode));
-    }
 }
