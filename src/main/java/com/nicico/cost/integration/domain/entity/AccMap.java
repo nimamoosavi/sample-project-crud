@@ -1,6 +1,7 @@
 package com.nicico.cost.integration.domain.entity;
 
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,8 +20,12 @@ public class AccMap {
     private String name;
     @Column(name = "DESCRIPTION")
     private String description;
+    @Setter(AccessLevel.NONE)
     @ManyToOne
-    @JoinColumn(name = "DETAIL_TYPE_ID")
+    @JoinColumn(name = "DETAIL_TYPE_ID",updatable = false,insertable = false)
     private DetailType detailType;
+
+    @Column(name = "DETAIL_TYPE_ID")
+    private Long detailTypeId;
 
 }
