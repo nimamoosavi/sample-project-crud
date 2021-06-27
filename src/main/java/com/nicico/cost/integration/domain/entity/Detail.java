@@ -23,8 +23,11 @@ public class Detail {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DET_PARENT_ID")
+    @JoinColumn(name = "DET_PARENT_ID",updatable = false,insertable = false)
     private Detail parentDetail;
+
+    @Column(name = "DET_PARENT_ID")
+    private Long parentId;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "DETAIL_TYPE_RELATION",

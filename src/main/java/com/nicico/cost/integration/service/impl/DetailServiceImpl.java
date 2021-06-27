@@ -1,6 +1,5 @@
 package com.nicico.cost.integration.service.impl;
 
-import com.nicico.cost.crud.service.impl.GeneralServiceImpl;
 import com.nicico.cost.framework.domain.dto.BaseDTO;
 import com.nicico.cost.framework.domain.dto.PageDTO;
 import com.nicico.cost.integration.domain.entity.Detail;
@@ -10,13 +9,13 @@ import com.nicico.cost.integration.domain.view.detail.DetailResVM;
 import com.nicico.cost.integration.repository.detail.DetailJdbcService;
 import com.nicico.cost.integration.repository.detailtype.DetailTypeJdbcService;
 import com.nicico.cost.integration.service.DetailService;
+import com.nicico.cost.tree.service.impl.TreeServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 
 import static com.nicico.cost.framework.service.GeneralResponse.successCustomListResponse;
 import static com.nicico.cost.framework.service.GeneralResponse.successCustomResponse;
@@ -25,7 +24,7 @@ import static com.nicico.cost.integration.exception.IntegrationException.DETAIL_
 
 @Service
 @RequiredArgsConstructor
-class DetailServiceImpl extends GeneralServiceImpl<Detail, DetailReqVM, DetailResVM, Long> implements DetailService {
+class DetailServiceImpl extends TreeServiceImpl<Detail, DetailReqVM, DetailResVM, Long> implements DetailService {
 
     private final DetailJdbcService detailRepository;
     private final DetailTypeJdbcService detailTypeJdbcService;

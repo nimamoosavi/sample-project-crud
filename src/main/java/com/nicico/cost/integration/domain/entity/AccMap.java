@@ -21,7 +21,7 @@ public class AccMap {
     @Column(name = "DESCRIPTION")
     private String description;
     @Setter(AccessLevel.NONE)
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DETAIL_TYPE_ID",updatable = false,insertable = false)
     private DetailType detailType;
 

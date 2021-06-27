@@ -1,16 +1,13 @@
 package com.nicico.cost.integration.domain.view.detail;
 
 import com.nicico.cost.integration.domain.view.detailtype.DetailTypeResVM;
+import com.nicico.cost.tree.domain.view.TreeResVM;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class DetailResVM {
-
-    private Long id;
-
-    private Long parentDetailId;
+public class DetailResVM extends TreeResVM<Long> {
 
     private List<DetailTypeResVM> detailTypeResVMS;
 
