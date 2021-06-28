@@ -3,11 +3,15 @@ package com.nicico.cost.integration.domain.view.detail;
 import com.nicico.cost.integration.domain.view.detailtype.DetailTypeResVM;
 import com.nicico.cost.tree.domain.view.TreeResVM;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class DetailResVM extends TreeResVM<Long> {
+
+    private Long id;
 
     private List<DetailTypeResVM> detailTypeResVMS;
 

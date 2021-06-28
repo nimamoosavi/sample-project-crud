@@ -1,9 +1,9 @@
 package com.nicico.cost.integration.mapper;
 
-import com.nicico.cost.crud.mapper.GeneralMapper;
 import com.nicico.cost.integration.domain.entity.Detail;
 import com.nicico.cost.integration.domain.view.detail.DetailReqVM;
 import com.nicico.cost.integration.domain.view.detail.DetailResVM;
+import com.nicico.cost.tree.mapper.TreeMapper;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Mapper(componentModel = "spring")
 @Component
-public abstract class DetailMapper extends GeneralMapper<Detail, DetailReqVM, DetailResVM> {
+public abstract class DetailMapper extends TreeMapper<Detail, DetailReqVM, DetailResVM,Long> {
 
     @Autowired
     DetailTypeMapper detailTypeMapper;

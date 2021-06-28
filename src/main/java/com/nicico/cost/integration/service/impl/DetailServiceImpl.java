@@ -35,7 +35,7 @@ class DetailServiceImpl extends TreeServiceImpl<Detail, DetailReqVM, DetailResVM
                 () -> applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND)
         );
         List<Detail> details = detailRepository.findAllByDetailTypes(detailType);
-        return generalMapper.mapListBaseObjectToResponse(details);
+        return treeMapper.mapListBaseObjectToResponse(details);
     }
 
     @Override
@@ -43,7 +43,7 @@ class DetailServiceImpl extends TreeServiceImpl<Detail, DetailReqVM, DetailResVM
         DetailType detailType = detailTypeJdbcService.findById(detailTypeId).orElseThrow(
                 () -> applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND)
         );
-        Page<Detail> allByDetailTypes = detailRepository.findAllByDetailTypes(detailType, page, pageSize);
+        PageDTO<List<Detail>> allByDetailTypes = detailRepository.findAllByDetailTypes(detailType, page, pageSize);
         return successPageResponse(allByDetailTypes);
     }
 
@@ -56,7 +56,7 @@ class DetailServiceImpl extends TreeServiceImpl<Detail, DetailReqVM, DetailResVM
                 () -> applicationException.createApplicationException(DETAIL_NOT_FOUND, HttpStatus.NOT_FOUND)
         );
         List<Detail> parentDetailIs = detailRepository.findAllByDetailTypesAndParentDetailIs(detailType, detailParent);
-        return successCustomListResponse(generalMapper.mapListBaseObjectToResponse(parentDetailIs).getData());
+        return successCustomListResponse(treeMapper.mapListBaseObjectToResponse(parentDetailIs).getData());
     }
 
     @Override
@@ -67,16 +67,25 @@ class DetailServiceImpl extends TreeServiceImpl<Detail, DetailReqVM, DetailResVM
         Detail detailParent = detailRepository.findById(detailParentId).orElseThrow(
                 () -> applicationException.createApplicationException(DETAIL_NOT_FOUND, HttpStatus.NOT_FOUND)
         );
-        Page<Detail> detailIs = detailRepository.findAllByDetailTypesAndParentDetailIs(detailType, detailParent, page, pageSize);
+        PageDTO<List<Detail>> detailIs = detailRepository.findAllByDetailTypesAndParentDetailIs(detailType, detailParent, page, pageSize);
         return successPageResponse(detailIs);
     }
 
 
     private BaseDTO<PageDTO<List<DetailResVM>>> successPageResponse(Page<Detail> page) {
-        List<DetailResVM> detailResVMS = generalMapper.mapListBaseObjectToResponse(page.toList()).getData();
+        List<DetailResVM> detailResVMS = treeMapper.mapListBaseObjectToResponse(page.toList()).getData();
         PageDTO<List<DetailResVM>> pageDTO = PageDTO.<List<DetailResVM>>builder().totalElement(page.getTotalElements())
                 .totalPages(page.getTotalPages())
                 .pageSize(page.getSize()).object(detailResVMS).build();
+        return successCustomResponse(pageDTO);
+    }
+
+
+    private BaseDTO<PageDTO<List<DetailResVM>>> successPageResponse(PageDTO<List<Detail>> page) {
+        List<DetailResVM> detailResVMS = treeMapper.mapListBaseObjectToResponse(page.getObject()).getData();
+        PageDTO<List<DetailResVM>> pageDTO = PageDTO.<List<DetailResVM>>builder().totalElement(page.getTotalElement())
+                .totalPages(page.getTotalPages())
+                .pageSize(page.getPageSize()).object(detailResVMS).build();
         return successCustomResponse(pageDTO);
     }
 }
