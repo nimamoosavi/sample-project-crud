@@ -35,7 +35,7 @@ class DetailServiceImpl extends TreeServiceImpl<Detail, DetailReqVM, DetailResVM
                 () -> applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND)
         );
         List<Detail> details = detailRepository.findAllByDetailTypes(detailType);
-        return treeMapper.mapListBaseObjectToResponse(details);
+        return generalMapper.mapListBaseObjectToResponse(details);
     }
 
     @Override
@@ -56,7 +56,7 @@ class DetailServiceImpl extends TreeServiceImpl<Detail, DetailReqVM, DetailResVM
                 () -> applicationException.createApplicationException(DETAIL_NOT_FOUND, HttpStatus.NOT_FOUND)
         );
         List<Detail> parentDetailIs = detailRepository.findAllByDetailTypesAndParentDetailIs(detailType, detailParent);
-        return successCustomListResponse(treeMapper.mapListBaseObjectToResponse(parentDetailIs).getData());
+        return successCustomListResponse(generalMapper.mapListBaseObjectToResponse(parentDetailIs).getData());
     }
 
     @Override
@@ -73,7 +73,7 @@ class DetailServiceImpl extends TreeServiceImpl<Detail, DetailReqVM, DetailResVM
 
 
     private BaseDTO<PageDTO<List<DetailResVM>>> successPageResponse(Page<Detail> page) {
-        List<DetailResVM> detailResVMS = treeMapper.mapListBaseObjectToResponse(page.toList()).getData();
+        List<DetailResVM> detailResVMS = generalMapper.mapListBaseObjectToResponse(page.toList()).getData();
         PageDTO<List<DetailResVM>> pageDTO = PageDTO.<List<DetailResVM>>builder().totalElement(page.getTotalElements())
                 .totalPages(page.getTotalPages())
                 .pageSize(page.getSize()).object(detailResVMS).build();
@@ -82,7 +82,7 @@ class DetailServiceImpl extends TreeServiceImpl<Detail, DetailReqVM, DetailResVM
 
 
     private BaseDTO<PageDTO<List<DetailResVM>>> successPageResponse(PageDTO<List<Detail>> page) {
-        List<DetailResVM> detailResVMS = treeMapper.mapListBaseObjectToResponse(page.getObject()).getData();
+        List<DetailResVM> detailResVMS = generalMapper.mapListBaseObjectToResponse(page.getObject()).getData();
         PageDTO<List<DetailResVM>> pageDTO = PageDTO.<List<DetailResVM>>builder().totalElement(page.getTotalElement())
                 .totalPages(page.getTotalPages())
                 .pageSize(page.getPageSize()).object(detailResVMS).build();
