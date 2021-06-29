@@ -33,17 +33,16 @@ public class Detail {
     @JoinTable(name = "DETAIL_TYPE_RELATION",
             joinColumns = @JoinColumn(name = "DET_ID", foreignKey = @ForeignKey(name = "FK_DETAIL_TYPE")),
             inverseJoinColumns = @JoinColumn(name = "TYPE_ID", foreignKey = @ForeignKey(name = "FK_TYPE_DETAIL")))
-
     private List<DetailType> detailTypes;
 
 
     @Column(name = "DET_NUM", precision = 20)
     private Long detailNumber;
 
-    @Column(name = "DET_DETAILNAME", nullable = false, length = 255)
+    @Column(name = "DET_DETAILNAME", nullable = false)
     private String detailName;
 
-    @Column(name = "DET_DETAILNAME_LATIN", length = 255)
+    @Column(name = "DET_DETAILNAME_LATIN")
     private String detailNameLatin;
 
     @Column(name = "DET_CHILDRENDIGITCOUNT", nullable = false)

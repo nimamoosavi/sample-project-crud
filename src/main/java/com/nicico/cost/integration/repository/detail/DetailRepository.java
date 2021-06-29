@@ -11,11 +11,8 @@ import java.util.List;
 
 @Repository
 interface DetailRepository extends TreeJdbcRepository<Detail, Long> {
-    List<Detail> findAllByDetailTypes(DetailType detailType);
 
-    Page<Detail> findAllByDetailTypes(DetailType detailType, Pageable pageable);
+    List<Detail> findAllByDetailTypesAndIsFolderFalse(DetailType detailType);
 
-    List<Detail> findAllByDetailTypesAndParentDetailIs(DetailType detailType, Detail detail);
-
-    Page<Detail> findAllByDetailTypesAndParentDetailIs(DetailType detailType, Detail detail, Pageable pageable);
+    Page<Detail> findAllByDetailTypesAndIsFolderFalse(DetailType detailType, Pageable pageable);
 }

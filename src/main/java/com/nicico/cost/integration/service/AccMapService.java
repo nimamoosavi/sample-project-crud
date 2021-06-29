@@ -14,4 +14,5 @@ public interface AccMapService extends GeneralService<AccMapReqVM, AccMapResVM, 
     BaseDTO<AccMapResVM> mapDetailTypeToAcc(AccMapDetailType mapDetailType);
 
     BaseDTO<List<AccMapResVM>> mapAllDetailTypeToAcc(List<AccMapDetailType> mapDetailTypes);
+
 }
