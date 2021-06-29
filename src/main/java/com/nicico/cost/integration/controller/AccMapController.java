@@ -5,14 +5,12 @@ import com.nicico.cost.framework.domain.dto.BaseDTO;
 import com.nicico.cost.integration.domain.view.accmap.AccMapDetailType;
 import com.nicico.cost.integration.domain.view.accmap.AccMapReqVM;
 import com.nicico.cost.integration.domain.view.accmap.AccMapResVM;
+import com.nicico.cost.integration.domain.view.accmap.AccMapValidate;
 import com.nicico.cost.integration.service.AccMapService;
 import io.swagger.annotations.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,6 +40,14 @@ public class AccMapController extends BaseController<AccMapReqVM, AccMapResVM, L
     @PostMapping("/map/all/detail-type")
     public ResponseEntity<BaseDTO<List<AccMapResVM>>> mapAllDetailTypeToAcc(@RequestBody List<AccMapDetailType> mapDetailTypes) {
         return ResponseEntity.ok(accMapService.mapAllDetailTypeToAcc(mapDetailTypes));
+    }
+
+    @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
+    @GetMapping("/validate/detail-accMap")
+    public ResponseEntity<BaseDTO<Boolean>> validateAccMapAndDetail(@RequestBody AccMapValidate accMapValidate) {
+        return ResponseEntity.ok(accMapService.validateAccMapDetail(accMapValidate));
     }
 
 
