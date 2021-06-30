@@ -17,7 +17,7 @@ public enum IntegrationException implements Message {
             return this.name();
         }
     },
-    NIMA {
+    ALREADY_EXISTED {
         @Override
         public String key() {
             return this.name();

@@ -8,13 +8,9 @@ import com.nicico.cost.integration.domain.view.peopleaccesslist.PeopleAccessList
 import com.nicico.cost.integration.repository.peopleaccesslist.PeopleAccessListJdbcService;
 import com.nicico.cost.integration.service.PeopleAccessListService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-
-import static com.nicico.cost.integration.exception.IntegrationException.NIMA;
 
 @Service
 @RequiredArgsConstructor
@@ -25,30 +21,12 @@ public class PeopleAccessListServiceImpl extends
     private final PeopleAccessListJdbcService peopleAccessListJdbcService;
 
     @Override
-    public BaseDTO<PeopleAccessListResVM> update(PeopleAccessListReqVM peopleAccessListReqVM) {
-        return super.update(peopleAccessListReqVM);
-    }
-
-    @Override
     public BaseDTO<PeopleAccessListResVM> save(PeopleAccessListReqVM peopleAccessListReqVM) {
         if (peopleAccessListReqVM.isWriteAccess()) {
             peopleAccessListReqVM.setReadAccess(true);
         }
-        Optional<PeopleAccessList> peopleAccessList =
-                peopleAccessListJdbcService.findByPeopleIdAndOrganizationId(peopleAccessListReqVM.getPeopleId(), peopleAccessListReqVM.getOrganizationId());
-        if (peopleAccessList.isPresent()) {
-            peopleAccessListReqVM.setId(peopleAccessList.get().getId());
-            return super.update(peopleAccessListReqVM);
-        }
         return super.save(peopleAccessListReqVM);
     }
-
-
-//    @Override
-//    public BaseDTO<PeopleAccessListResVM> getPeopleAccessListByPeopleIdAndOrganizationId(Long peopleId, Long organizationId) {
-//        PeopleAccessList peopleAccessList = peopleAccessListJdbcService.getPeopleAccessListByPeopleIdAndOrganizationId(peopleId, organizationId);
-//        return generalMapper.mapBaseObjectToResponse(peopleAccessList);
-//    }
 
     @Override
     public BaseDTO<PeopleAccessListResVM> getPeopleAccessListByPeopleIdAndOrganizationId(Long peopleId, Long organizationId) {
