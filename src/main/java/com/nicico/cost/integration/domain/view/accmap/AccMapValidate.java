@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class AccMapValidate {
     @NotNull
-    private Long accMapId;
+    private String accCode;
     @NotNull
     private Long detailId;
 }
