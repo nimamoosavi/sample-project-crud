@@ -16,5 +16,11 @@ public enum IntegrationException implements Message {
         public String key() {
             return this.name();
         }
+    },
+    NIMA {
+        @Override
+        public String key() {
+            return this.name();
+        }
     }
 }
