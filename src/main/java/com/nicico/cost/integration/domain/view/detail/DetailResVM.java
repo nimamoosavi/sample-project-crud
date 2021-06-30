@@ -1,7 +1,7 @@
 package com.nicico.cost.integration.domain.view.detail;
 
 import com.nicico.cost.integration.domain.view.detailtype.DetailTypeResVM;
-import com.nicico.cost.tree.domain.view.TreeResVM;
+import com.nicico.cost.crud.domain.view.TreeResVM;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
