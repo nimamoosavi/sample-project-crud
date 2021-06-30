@@ -8,7 +8,7 @@ import com.nicico.cost.integration.domain.view.detail.DetailResVM;
 import com.nicico.cost.integration.repository.detail.DetailJdbcService;
 import com.nicico.cost.integration.repository.detailtype.DetailTypeJdbcService;
 import com.nicico.cost.integration.service.DetailService;
-import com.nicico.cost.tree.service.impl.TreeServiceImpl;
+import com.nicico.cost.crud.service.impl.TreeServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@ package com.nicico.cost.integration.controller;
 
 import com.nicico.cost.integration.domain.view.detail.DetailReqVM;
 import com.nicico.cost.integration.domain.view.detail.DetailResVM;
-import com.nicico.cost.tree.controller.TreeController;
+import com.nicico.cost.crud.controller.TreeController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.SwaggerDefinition;
 import io.swagger.annotations.Tag;

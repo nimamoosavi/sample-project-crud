@@ -49,16 +49,16 @@
             <artifactId>Jdbc-client</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.nicico.cost</groupId>
-            <artifactId>audit</artifactId>
-            <version>1.0.2-Release</version>
-        </dependency>
-        <dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.nicico.cost</groupId>-->
+<!--            <artifactId>audit</artifactId>-->
+<!--            <version>1.0.2-Release</version>-->
+<!--        </dependency>-->
+    <!--    <dependency>
             <groupId>com.nicico.cost</groupId>
             <artifactId>tree</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
