@@ -1,0 +1,72 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="ali (generated)" id="1624963845706-1">
+        <createSequence maxValue="9999999999999999999999999999" sequenceName="HIBERNATE_SEQUENCE" startValue="241"/>
+    </changeSet>
+    <changeSet author="ali (generated)" id="1624963845706-2">
+        <createSequence maxValue="9999999999999999999999999999" sequenceName="SEQ_DEPARTMENT_ID" startValue="1"/>
+    </changeSet>
+    <changeSet author="ali (generated)" id="1624963845706-3">
+        <createSequence maxValue="9999999999999999999999999999" sequenceName="SEQ_DETAIL_ID" startValue="21"/>
+    </changeSet>
+    <changeSet author="ali (generated)" id="1624963845706-4">
+        <createSequence maxValue="9999999999999999999999999999" sequenceName="SEQ_ORGANIZATION_ID" startValue="1"/>
+    </changeSet>
+    <changeSet author="ali (generated)" id="1624963845706-5">
+        <createSequence maxValue="9999999999999999999999999999" sequenceName="SEQ_TYPE_ID" startValue="1"/>
+    </changeSet>
+    <changeSet author="ali (generated)" id="1624963845706-7">
+        <createTable tableName="COST_TYPE">
+            <column name="ID" type="NUMBER(19, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="SYS_C00500518"/>
+            </column>
+            <column name="CODE" type="VARCHAR2(255 CHAR)"/>
+            <column name="DESCRIPTION" type="VARCHAR2(255 CHAR)"/>
+            <column name="NAME" type="VARCHAR2(255 CHAR)"/>
+            <column name="SORT" type="NUMBER(19, 0)"/>
+            <column name="DETAIL_TYPE_ID" type="NUMBER(19, 0)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ali (generated)" id="1624963845706-10">
+        <insert tableName="COST_TYPE">
+            <column name="ID" valueNumeric="201"/>
+            <column name="CODE"/>
+            <column name="DESCRIPTION" value="مرکز هزینه"/>
+            <column name="NAME" value="cost-center"/>
+            <column name="SORT"/>
+            <column name="DETAIL_TYPE_ID" valueNumeric="122"/>
+        </insert>
+        <insert tableName="COST_TYPE">
+            <column name="ID" valueNumeric="202"/>
+            <column name="CODE"/>
+            <column name="DESCRIPTION" value="اشخاص"/>
+            <column name="NAME" value="persons"/>
+            <column name="SORT"/>
+            <column name="DETAIL_TYPE_ID" valueNumeric="103"/>
+        </insert>
+        <insert tableName="COST_TYPE">
+            <column name="ID" valueNumeric="203"/>
+            <column name="CODE"/>
+            <column name="DESCRIPTION" value="تنخواه گردان"/>
+            <column name="NAME" value="recruitment"/>
+            <column name="SORT"/>
+            <column name="DETAIL_TYPE_ID" valueNumeric="101"/>
+        </insert>
+        <insert tableName="COST_TYPE">
+            <column name="ID" valueNumeric="204"/>
+            <column name="CODE"/>
+            <column name="DESCRIPTION" value="صندوق‌ دار"/>
+            <column name="NAME" value="cashier"/>
+            <column name="SORT"/>
+            <column name="DETAIL_TYPE_ID" valueNumeric="101"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ali (generated)" id="1624963845706-14">
+        <createIndex indexName="UK_622034EAYBFJ98EWWRHMW1T9C" tableName="COST_TYPE" unique="true">
+            <column name="CODE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ali (generated)" id="1624963845706-15">
+        <addUniqueConstraint columnNames="CODE" constraintName="UK_622034EAYBFJ98EWWRHMW1T9C" forIndexName="UK_622034EAYBFJ98EWWRHMW1T9C" tableName="COST_TYPE"/>
+    </changeSet>
+</databaseChangeLog>
