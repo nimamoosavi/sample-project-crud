@@ -17,9 +17,12 @@ public class PeopleAccessListJdbcService extends JdbcServiceImpl<PeopleAccessLis
 
     private final PeopleAccessListRepository peopleAccessListRepository;
 
-    @Override
-    public PeopleAccessList save(PeopleAccessList peopleAccessList) {
-        return super.save(peopleAccessList);
+    public Optional<PeopleAccessList> findByPeopleIdAndOrganizationId(Long peopleId, Long organizationId){
+        return peopleAccessListRepository.findByPeopleIdAndOrganizationId(peopleId, organizationId);
+    }
+
+    public Boolean existsByPeopleIdAndOrganizationId(Long peopleId, Long organizationId){
+        return peopleAccessListRepository.existsByPeopleIdAndOrganizationId(peopleId, organizationId);
     }
 
     public List<PeopleAccessList> findAllByPeople_IdAndWriteAccessTrue(Long peopleId) {

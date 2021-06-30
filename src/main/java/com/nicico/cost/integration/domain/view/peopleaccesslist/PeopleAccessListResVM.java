@@ -9,11 +9,7 @@ import javax.validation.constraints.NotNull;
 public class PeopleAccessListResVM {
 
     private Long id;
-    @NotNull
-    @NotBlank
     private Long peopleId;
-    @NotNull
-    @NotBlank
     private Long organizationId;
     private boolean readAccess;
     private boolean writeAccess;
