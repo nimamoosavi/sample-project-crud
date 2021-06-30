@@ -29,16 +29,6 @@ public class PeopleAccessListServiceImpl extends
     }
 
     @Override
-    public BaseDTO<PeopleAccessListResVM> getPeopleAccessListByPeopleIdAndOrganizationId(Long peopleId, Long organizationId) {
-        return null;
-    }
-
-    @Override
-    public Boolean existByPeopleIdAndOrganizationId(Long peopleId, Long organizationId) {
-        return peopleAccessListJdbcService.existsByPeopleIdAndOrganizationId(peopleId, organizationId);
-    }
-
-    @Override
     public BaseDTO<List<PeopleAccessListResVM>> findAllByPeople_IdAndWriteAccessTrue(Long peopleId) {
         List<PeopleAccessList> people = peopleAccessListJdbcService.findAllByPeople_IdAndWriteAccessTrue(peopleId);
         return generalMapper.mapListBaseObjectToResponse(people);
