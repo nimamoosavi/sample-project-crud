@@ -1,19 +1,5 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <!-- changeset id = sequence-changeset_id_in_changes-first_letter_of_your_name_contact_first_letter_of_your_last_name -->
-    <changeSet author="ali" id="sequence-1-aa">
-        <createSequence maxValue="9999999999999999999999999999" sequenceName="HIBERNATE_SEQUENCE" startValue="241"/>
-    </changeSet>
-    <changeSet author="ali" id="sequence-2-aa">
-        <createSequence maxValue="9999999999999999999999999999" sequenceName="SEQ_DEPARTMENT_ID" startValue="1"/>
-    </changeSet>
-    <changeSet author="ali" id="sequence-3-aa">
-        <createSequence maxValue="9999999999999999999999999999" sequenceName="SEQ_DETAIL_ID" startValue="21"/>
-    </changeSet>
-    <changeSet author="ali" id="sequence-4-aa">
-        <createSequence maxValue="9999999999999999999999999999" sequenceName="SEQ_ORGANIZATION_ID" startValue="1"/>
-    </changeSet>
-    <changeSet author="ali" id="sequence-5-aa">
-        <createSequence maxValue="9999999999999999999999999999" sequenceName="SEQ_TYPE_ID" startValue="1"/>
-    </changeSet>
+
 </databaseChangeLog>

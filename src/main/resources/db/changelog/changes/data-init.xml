@@ -4,34 +4,26 @@
     <changeSet author="ali" id="data-cost_type-1-aa">
         <insert tableName="COST_TYPE">
             <column name="ID" valueNumeric="201"/>
-            <column name="CODE"/>
             <column name="DESCRIPTION" value="مرکز هزینه"/>
             <column name="NAME" value="cost-center"/>
-            <column name="SORT"/>
             <column name="DETAIL_TYPE_ID"/>
         </insert>
         <insert tableName="COST_TYPE">
             <column name="ID" valueNumeric="202"/>
-            <column name="CODE"/>
             <column name="DESCRIPTION" value="اشخاص"/>
             <column name="NAME" value="persons"/>
-            <column name="SORT"/>
             <column name="DETAIL_TYPE_ID"/>
         </insert>
         <insert tableName="COST_TYPE">
             <column name="ID" valueNumeric="203"/>
-            <column name="CODE"/>
             <column name="DESCRIPTION" value="تنخواه گردان"/>
             <column name="NAME" value="recruitment"/>
-            <column name="SORT"/>
             <column name="DETAIL_TYPE_ID"/>
         </insert>
         <insert tableName="COST_TYPE">
             <column name="ID" valueNumeric="204"/>
-            <column name="CODE"/>
             <column name="DESCRIPTION" value="صندوق‌ دار"/>
             <column name="NAME" value="cashier"/>
-            <column name="SORT"/>
             <column name="DETAIL_TYPE_ID"/>
         </insert>
     </changeSet>
