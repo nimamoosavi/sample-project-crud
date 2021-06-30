@@ -5,5 +5,15 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <include file="src/main/resources/db/changelog/changes/db.changelog-init.xml"/>
+    <!-- sequences -->
+    <include file="src/main/resources/db/changelog/changes/sequences-init.xml"/>
+
+    <!-- creates, indexes, uniqueconstraints, foreignkeys, primarykeys, columns -->
+    <include file="src/main/resources/db/changelog/changes/tbls-indexes-constraints-keys-init.xml"/>
+
+    <!-- data initialization  -->
+    <include file="src/main/resources/db/changelog/changes/data-init.xml"/>
+
+    <!-- views, storedprocedures, functions, triggers  -->
+    <include file="src/main/resources/db/changelog/changes/views-storedprocedures-functions-triggers-init.xml"/>
 </databaseChangeLog>
