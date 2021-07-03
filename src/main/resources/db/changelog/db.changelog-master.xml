@@ -6,14 +6,14 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <!-- sequences -->
-    <include file="src/main/resources/db/changelog/changes/sequences-init.xml"/>
+    <include file="changes/sequences-init.xml" relativeToChangelogFile="true"/>
 
     <!-- creates, indexes, uniqueconstraints, foreignkeys, primarykeys, columns -->
-    <include file="src/main/resources/db/changelog/changes/tbls-indexes-constraints-keys-init.xml"/>
+    <include file="changes/tbls-indexes-constraints-keys-init.xml" relativeToChangelogFile="true"/>
 
     <!-- data initialization  -->
-    <include file="src/main/resources/db/changelog/changes/data-init.xml"/>
+    <include file="changes/data-init.xml" relativeToChangelogFile="true"/>
 
     <!-- views, storedprocedures, functions, triggers  -->
-    <include file="src/main/resources/db/changelog/changes/views-storedprocedures-functions-triggers-init.xml"/>
+    <include file="changes/views-storedprocedures-functions-triggers-init.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

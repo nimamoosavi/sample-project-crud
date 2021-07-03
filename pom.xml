@@ -149,8 +149,6 @@
                 <version>${liquibase.version}</version>
                 <configuration>
                     <propertyFile>src/main/resources/liquibase.properties</propertyFile>
-                    <databaseChangeLogTableName>COST_LIQ_CHANGELOG</databaseChangeLogTableName>
-                    <databaseChangeLogLockTableName>COST_LIQ_CHANGELOG_LOCK</databaseChangeLogLockTableName>
                 </configuration>
                 <dependencies>
                     <dependency>
