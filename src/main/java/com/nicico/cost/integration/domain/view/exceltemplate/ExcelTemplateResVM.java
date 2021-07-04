@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Map;
 
 @Data
 public class ExcelTemplateResVM {
@@ -15,6 +16,5 @@ public class ExcelTemplateResVM {
     @NotNull
     @NotBlank
     private String type;
-    private String data;
-    private boolean rowNumber;
+    private Map<String, String> attributes;
 }

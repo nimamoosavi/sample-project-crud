@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @Entity
 @Table(name = "EXCEL_TEMPLATE", uniqueConstraints = {@UniqueConstraint(columnNames = {"PROCESS_NAME", "TYPE"})})
@@ -21,9 +23,9 @@ public class ExcelTemplate {
     @Column(name = "TYPE")
     private String type;
 
-    @Column(name = "DATA")
-    private String data;
-
-    @Column(name = "ROW_NUMBER")
-    private boolean rowNumber;
+    @ElementCollection
+    @MapKeyColumn(name = "NAME")
+    @Column(name = "VALUE")
+    @CollectionTable(name = "EXCEL_TEMPLATE_ATTRIBUTES", joinColumns = @JoinColumn(name = "EXCEL_TEMPLATE_ID"))
+    private Map<String, String> attributes = new HashMap<>();
 }
