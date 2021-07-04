@@ -45,7 +45,7 @@ public class AccMapController extends BaseController<AccMapReqVM, AccMapResVM, L
     @ApiImplicitParams({@ApiImplicitParam(name = AUTHORIZATION, value = AUTHORIZATION, required = true, dataType = "string", paramType = "header"),
             @ApiImplicitParam(name = CORRELATION_ID, value = CORRELATION_ID, required = true, dataType = "string", paramType = "header"),
             @ApiImplicitParam(name = CLIENT_VERSION, value = CLIENT_VERSION, required = true, dataType = "string", paramType = "header")})
-    @GetMapping("/validate/detail-accMap")
+    @PostMapping("/validate/detail-accMap")
     public ResponseEntity<BaseDTO<Boolean>> validateAccMapAndDetail(@RequestBody AccMapValidate accMapValidate) {
         return ResponseEntity.ok(accMapService.validateAccMapDetail(accMapValidate));
     }
