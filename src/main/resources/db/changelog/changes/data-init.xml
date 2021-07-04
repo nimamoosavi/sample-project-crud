@@ -1,0 +1,30 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!-- changeset id = data-table_name_in_lowercase-changeset_id_in_changes-first_letter_of_your_name_contact_first_letter_of_your_last_name -->
+    <changeSet author="ali" id="data-cost_type-1-aa">
+        <insert tableName="COST_TYPE">
+            <column name="ID" valueNumeric="201"/>
+            <column name="DESCRIPTION" value="مرکز هزینه"/>
+            <column name="NAME" value="cost-center"/>
+            <column name="DETAIL_TYPE_ID"/>
+        </insert>
+        <insert tableName="COST_TYPE">
+            <column name="ID" valueNumeric="202"/>
+            <column name="DESCRIPTION" value="اشخاص"/>
+            <column name="NAME" value="persons"/>
+            <column name="DETAIL_TYPE_ID"/>
+        </insert>
+        <insert tableName="COST_TYPE">
+            <column name="ID" valueNumeric="203"/>
+            <column name="DESCRIPTION" value="تنخواه گردان"/>
+            <column name="NAME" value="recruitment"/>
+            <column name="DETAIL_TYPE_ID"/>
+        </insert>
+        <insert tableName="COST_TYPE">
+            <column name="ID" valueNumeric="204"/>
+            <column name="DESCRIPTION" value="صندوق‌ دار"/>
+            <column name="NAME" value="cashier"/>
+            <column name="DETAIL_TYPE_ID"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
