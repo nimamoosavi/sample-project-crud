@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.nicico.cost.integration.exception.IntegrationException.*;
+import static com.nicico.cost.integration.exception.IntegrationException.EXCEL_TEMPLATE_ERROR;
 
 @Service
 @RequiredArgsConstructor
@@ -35,13 +35,10 @@ public class ExcelTemplateServiceImpl extends GeneralServiceImpl<ExcelTemplate, 
         Map<String, String> newAttributes = new HashMap<>();
         for (Map.Entry<String, String> entry : excelTemplateReqVM.getAttributes().entrySet()) {
             String newMapKey = mapKeyFilter(entry.getKey());
-            if (excelTemplateReqVM.isNeedRegex()) {
-                if (!entry.getKey().equals(newMapKey)) {
-                    throw applicationException.createApplicationException(EXCEL_TEMPLATE_ERROR, HttpStatus.BAD_REQUEST);
-                }
-            } else {
-                newAttributes.put(newMapKey, entry.getValue());
+            if (!excelTemplateReqVM.isNeedRegex() && !entry.getKey().equals(newMapKey)) {
+                throw applicationException.createApplicationException(EXCEL_TEMPLATE_ERROR, HttpStatus.BAD_REQUEST);
             }
+            newAttributes.put(newMapKey, entry.getValue());
         }
         excelTemplateReqVM.setAttributes(newAttributes);
         return super.save(excelTemplateReqVM);
