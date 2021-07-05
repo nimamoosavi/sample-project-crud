@@ -22,5 +22,11 @@ public enum IntegrationException implements Message {
         public String key() {
             return this.name();
         }
+    },
+    EXCEL_TEMPLATE_ERROR {
+        @Override
+        public String key() {
+            return this.name();
+        }
     }
 }

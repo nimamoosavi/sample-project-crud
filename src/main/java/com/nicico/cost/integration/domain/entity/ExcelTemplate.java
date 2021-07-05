@@ -4,9 +4,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -19,16 +17,14 @@ public class ExcelTemplate {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "PROCESS_NAME")
+    @Column(name = "PROCESS_NAME", nullable = false)
     private String processName;
 
-    @Column(name = "TYPE")
+    @Column(name = "TYPE", nullable = false)
     private String type;
 
-    @ElementCollection
-    @Column(name = "DATA")
-    @CollectionTable(name = "EXCEL_TEMPLATE_DATA", joinColumns = @JoinColumn(name = "EXCEL_TEMPLATE_ID"))
-    private List<String> data = new ArrayList<>();
+    @Column(name = "NEED_REGEX")
+    private boolean needRegex;
 
     @ElementCollection
     @MapKeyColumn(name = "NAME")
