@@ -4,7 +4,9 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -22,6 +24,11 @@ public class ExcelTemplate {
 
     @Column(name = "TYPE")
     private String type;
+
+    @ElementCollection
+    @Column(name = "DATA")
+    @CollectionTable(name = "EXCEL_TEMPLATE_DATA", joinColumns = @JoinColumn(name = "EXCEL_TEMPLATE_ID"))
+    private List<String> data = new ArrayList<>();
 
     @ElementCollection
     @MapKeyColumn(name = "NAME")
