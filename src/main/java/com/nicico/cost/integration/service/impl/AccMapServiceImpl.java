@@ -66,9 +66,11 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
 
     @Override
     public BaseDTO<Boolean> validateAccMapDetail(AccMapValidate accMapValidate) {
-        AccMapResVM accMapResVM = findById(accMapValidate.getAccMapId()).getData();
+        AccMap accMap = accMapJdbcService.findByCode(accMapValidate.getAccCode()).orElseThrow(
+                () -> applicationException.createApplicationException(NOTFOUND, HttpStatus.NOT_FOUND)
+        );
         DetailResVM detailResVM = detailService.findById(accMapValidate.getDetailId()).getData();
-        boolean match = detailResVM.getDetailTypeResVMS().stream().anyMatch(detailTypeResVM -> Boolean.TRUE.equals(detailTypeResVM.getId().equals(accMapResVM.getDetailTypeId())));
+        boolean match = detailResVM.getDetailTypeResVMS().stream().anyMatch(detailTypeResVM -> Boolean.TRUE.equals(detailTypeResVM.getId().equals(accMap.getDetailTypeId())));
         return successCustomResponse(match);
     }
 }

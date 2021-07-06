@@ -20,6 +20,8 @@ public class AccMap {
     private String name;
     @Column(name = "DESCRIPTION")
     private String description;
+    @Column(name = "CODE")
+    private String code;
     @Setter(AccessLevel.NONE)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DETAIL_TYPE_ID",updatable = false,insertable = false)
