@@ -8,6 +8,7 @@ import com.nicico.cost.integration.domain.view.accmap.AccMapReqVM;
 import com.nicico.cost.integration.domain.view.accmap.AccMapResVM;
 import com.nicico.cost.integration.domain.view.accmap.AccMapValidate;
 import com.nicico.cost.integration.domain.view.detail.DetailResVM;
+import com.nicico.cost.integration.domain.view.detailtype.DetailTypeResVM;
 import com.nicico.cost.integration.repository.accmap.AccMapJdbcService;
 import com.nicico.cost.integration.service.AccMapService;
 import com.nicico.cost.integration.service.DetailService;
@@ -30,7 +31,6 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
     private final AccMapJdbcService accMapJdbcService;
     private final DetailTypeService detailTypeService;
     private final DetailService detailService;
-
 
 
     @Override
@@ -65,12 +65,14 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
     }
 
     @Override
-    public BaseDTO<Boolean> validateAccMapDetail(AccMapValidate accMapValidate) {
-        AccMap accMap = accMapJdbcService.findByCode(accMapValidate.getAccCode()).orElseThrow(
+    public BaseDTO<AccMapResVM> validateAccMapDetail(AccMapValidate accMapValidate) {
+        AccMap accMap = accMapJdbcService.findById(accMapValidate.getAccId()).orElseThrow(
                 () -> applicationException.createApplicationException(NOTFOUND, HttpStatus.NOT_FOUND)
         );
         DetailResVM detailResVM = detailService.findById(accMapValidate.getDetailId()).getData();
         boolean match = detailResVM.getDetailTypeResVMS().stream().anyMatch(detailTypeResVM -> Boolean.TRUE.equals(detailTypeResVM.getId().equals(accMap.getDetailTypeId())));
-        return successCustomResponse(match);
+        if (match)
+            return successCustomResponse(generalMapper.toResponseModel(accMap));
+        else throw applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
 }

@@ -7,6 +7,8 @@ import com.nicico.cost.integration.domain.view.accmap.AccMapDetailType;
 import com.nicico.cost.integration.domain.view.accmap.AccMapReqVM;
 import com.nicico.cost.integration.domain.view.accmap.AccMapResVM;
 import com.nicico.cost.integration.domain.view.accmap.AccMapValidate;
+import com.nicico.cost.integration.domain.view.detail.DetailResVM;
+import com.nicico.cost.integration.domain.view.detailtype.DetailTypeResVM;
 
 import java.util.List;
 
@@ -16,6 +18,6 @@ public interface AccMapService extends GeneralService<AccMapReqVM, AccMapResVM, 
 
     BaseDTO<List<AccMapResVM>> mapAllDetailTypeToAcc(List<AccMapDetailType> mapDetailTypes);
 
-    BaseDTO<Boolean> validateAccMapDetail(AccMapValidate accMapValidate);
+    BaseDTO<AccMapResVM> validateAccMapDetail(AccMapValidate accMapValidate);
 
 }
