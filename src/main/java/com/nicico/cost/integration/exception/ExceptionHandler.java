@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 @ControllerAdvice
 public class ExceptionHandler extends GeneralExceptionHandler {
 
+    @Override
     @org.springframework.web.bind.annotation.ExceptionHandler(DataIntegrityViolationException.class)
     protected ResponseEntity<BaseDTO<String>> handleException(Exception e) {
         BaseDTO<String> baseDTO = BaseDTO.<String>builder().code(

@@ -44,7 +44,7 @@ public class ExcelTemplateServiceImpl extends GeneralServiceImpl<ExcelTemplate, 
         return super.save(excelTemplateReqVM);
     }
 
-    public String mapKeyFilter(String mapKey) {
+    private String mapKeyFilter(String mapKey) {
         char[] charArray = mapKey.toCharArray();
         StringBuilder result = new StringBuilder();
         for (char c : charArray) {

@@ -15,8 +15,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class PeopleAccessListServiceImpl extends
-        GeneralServiceImpl<PeopleAccessList, PeopleAccessListReqVM, PeopleAccessListResVM, Long> implements
-        PeopleAccessListService {
+        GeneralServiceImpl<PeopleAccessList, PeopleAccessListReqVM, PeopleAccessListResVM, Long> implements PeopleAccessListService {
 
     private final PeopleAccessListJdbcService peopleAccessListJdbcService;
 
