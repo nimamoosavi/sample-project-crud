@@ -6,13 +6,14 @@ import com.nicico.cost.integration.domain.view.accmap.AccMapDetailType;
 import com.nicico.cost.integration.domain.view.accmap.AccMapReqVM;
 import com.nicico.cost.integration.domain.view.accmap.AccMapResVM;
 import com.nicico.cost.integration.domain.view.accmap.AccMapValidate;
-import com.nicico.cost.integration.domain.view.detail.DetailResVM;
-import com.nicico.cost.integration.domain.view.detailtype.DetailTypeResVM;
 import com.nicico.cost.integration.service.AccMapService;
 import io.swagger.annotations.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
