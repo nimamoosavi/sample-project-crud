@@ -8,14 +8,10 @@ import com.nicico.cost.integration.domain.view.accmap.AccMapReqVM;
 import com.nicico.cost.integration.domain.view.accmap.AccMapResVM;
 import com.nicico.cost.integration.domain.view.accmap.AccMapValidate;
 import com.nicico.cost.integration.domain.view.detail.DetailResVM;
-import com.nicico.cost.integration.domain.view.detailtype.DetailTypeResVM;
-import com.nicico.cost.integration.domain.view.organization.OrganizationResVM;
-import com.nicico.cost.integration.exception.IntegrationException;
 import com.nicico.cost.integration.repository.accmap.AccMapJdbcService;
 import com.nicico.cost.integration.service.AccMapService;
 import com.nicico.cost.integration.service.DetailService;
 import com.nicico.cost.integration.service.DetailTypeService;
-import com.nicico.cost.integration.service.OrganizationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -34,7 +30,6 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
     private final AccMapJdbcService accMapJdbcService;
     private final DetailTypeService detailTypeService;
     private final DetailService detailService;
-    private final OrganizationService organizationService;
 
 
     @Override
