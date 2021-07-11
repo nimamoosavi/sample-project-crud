@@ -40,7 +40,7 @@ deploy-dev:
       docker run -d \
         --net=$G_DCK_NET \
         -l traefik.backend=$CI_PROJECT_NAME \
-        -l traefik.frontend.rule=PathPrefixStrip:/cost-integretaion \
+        -l traefik.frontend.rule=PathPrefixStrip:/cost-integration \
         -e PROFILE=dev \
         --restart=always \
         --name $CI_PROJECT_NAME \
