@@ -28,14 +28,14 @@ public class PeopleAccessListServiceImpl extends
     }
 
     @Override
-    public BaseDTO<List<PeopleAccessListResVM>> findAllByPeople_IdAndWriteAccessTrue(Long peopleId) {
-        List<PeopleAccessList> people = peopleAccessListJdbcService.findAllByPeople_IdAndWriteAccessTrue(peopleId);
+    public BaseDTO<List<PeopleAccessListResVM>> findAllByPeopleIdAndWriteAccessTrue(Long peopleId) {
+        List<PeopleAccessList> people = peopleAccessListJdbcService.findAllByPeopleIdAndWriteAccessTrue(peopleId);
         return generalMapper.mapListBaseObjectToResponse(people);
     }
 
     @Override
-    public BaseDTO<List<PeopleAccessListResVM>> findAllByPeople_IdAndReadAccessTrue(Long peopleId) {
-        List<PeopleAccessList> people = peopleAccessListJdbcService.findAllByPeople_IdAndReadAccessTrue(peopleId);
+    public BaseDTO<List<PeopleAccessListResVM>> findAllByPeopleIdAndReadAccessTrue(Long peopleId) {
+        List<PeopleAccessList> people = peopleAccessListJdbcService.findAllByPeopleIdAndReadAccessTrue(peopleId);
         return generalMapper.mapListBaseObjectToResponse(people);
     }
 }

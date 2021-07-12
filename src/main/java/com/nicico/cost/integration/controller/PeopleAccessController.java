@@ -28,13 +28,13 @@ public class PeopleAccessController extends BaseController<PeopleAccessListReqVM
 
 
     @GetMapping(path = "/write/{peopleId}")
-    public ResponseEntity<BaseDTO<List<PeopleAccessListResVM>>> findAllByPeople_IdAndWriteAccessTrue(@PathVariable Long peopleId) {
-        return ResponseEntity.ok(peopleAccessListService.findAllByPeople_IdAndWriteAccessTrue(peopleId));
+    public ResponseEntity<BaseDTO<List<PeopleAccessListResVM>>> findAllByPeopleIdAndWriteAccessTrue(@PathVariable Long peopleId) {
+        return ResponseEntity.ok(peopleAccessListService.findAllByPeopleIdAndWriteAccessTrue(peopleId));
     }
 
     @GetMapping(path = "/read/{peopleId}")
-    public ResponseEntity<BaseDTO<List<PeopleAccessListResVM>>> findAllByPeople_IdAndReadAccessTrue(@PathVariable Long peopleId) {
-        return ResponseEntity.ok(peopleAccessListService.findAllByPeople_IdAndReadAccessTrue(peopleId));
+    public ResponseEntity<BaseDTO<List<PeopleAccessListResVM>>> findAllByPeopleIdAndReadAccessTrue(@PathVariable Long peopleId) {
+        return ResponseEntity.ok(peopleAccessListService.findAllByPeopleIdAndReadAccessTrue(peopleId));
     }
 
 }

@@ -14,11 +14,11 @@ public class PeopleAccessListJdbcService extends JdbcServiceImpl<PeopleAccessLis
 
     private final PeopleAccessListRepository peopleAccessListRepository;
 
-    public List<PeopleAccessList> findAllByPeople_IdAndWriteAccessTrue(Long peopleId) {
-        return peopleAccessListRepository.findAllByPeople_IdAndWriteAccessTrue(peopleId);
+    public List<PeopleAccessList> findAllByPeopleIdAndWriteAccessTrue(Long peopleId) {
+        return peopleAccessListRepository.findAllByPeopleIdAndWriteAccessTrue(peopleId);
     }
 
-    public List<PeopleAccessList> findAllByPeople_IdAndReadAccessTrue(Long peopleId) {
-        return peopleAccessListRepository.findAllByPeople_IdAndReadAccessTrue(peopleId);
+    public List<PeopleAccessList> findAllByPeopleIdAndReadAccessTrue(Long peopleId) {
+        return peopleAccessListRepository.findAllByPeopleIdAndReadAccessTrue(peopleId);
     }
 }

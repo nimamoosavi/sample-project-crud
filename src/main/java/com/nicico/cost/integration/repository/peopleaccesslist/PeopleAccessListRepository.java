@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 interface PeopleAccessListRepository extends JdbcRepository<PeopleAccessList, Long> {
 
-    List<PeopleAccessList> findAllByPeople_IdAndWriteAccessTrue(Long peopleId);
+    List<PeopleAccessList> findAllByPeopleIdAndWriteAccessTrue(Long peopleId);
 
-    List<PeopleAccessList> findAllByPeople_IdAndReadAccessTrue(Long peopleId);
+    List<PeopleAccessList> findAllByPeopleIdAndReadAccessTrue(Long peopleId);
 
 
 }
