@@ -12,8 +12,16 @@ import java.util.List;
 
 public interface AccMapService extends GeneralService<AccMapReqVM, AccMapResVM, Long> {
 
+    /**
+     *
+     * @param mapDetailType the object that mapped to acc map entity
+     * @return BaseDTO<AccMapResVM>
+     */
     BaseDTO<AccMapResVM> mapDetailTypeToAcc(AccMapDetailType mapDetailType);
 
+    /**
+     * @apiNote This method has cost for calling
+     */
     BaseDTO<List<AccMapResVM>> mapAllDetailTypeToAcc(List<AccMapDetailType> mapDetailTypes);
 
     BaseDTO<AccMapResVM> validateAccMapDetail(AccMapValidate accMapValidate);

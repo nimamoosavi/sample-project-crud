@@ -37,10 +37,13 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
         AccMap accMap = accMapJdbcService.findById(mapDetailType.getAccMapId()).orElseThrow(
                 () -> applicationException.createApplicationException(NOTFOUND, HttpStatus.NOT_FOUND)
         );
-        if (Boolean.TRUE.equals(detailTypeService.existsById(mapDetailType.getDetailTypeId()).getData()))
-            accMap.setDetailTypeId(mapDetailType.getDetailTypeId());
-        else
-            throw applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
+        if (mapDetailType.getDetailTypeId() != null) {
+            if (Boolean.TRUE.equals(detailTypeService.existsById(mapDetailType.getDetailTypeId()).getData()))
+                accMap.setDetailTypeId(mapDetailType.getDetailTypeId());
+            else
+                throw applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
+        } else
+            accMap.setDetailTypeId(null);
         AccMap map = accMapJdbcService.save(accMap);
         return generalMapper.mapBaseObjectToResponse(map);
     }
@@ -52,10 +55,13 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
             AccMap accMap = accMapJdbcService.findById(mapDetailType.getAccMapId()).orElseThrow(
                     () -> applicationException.createApplicationException(NOTFOUND, HttpStatus.NOT_FOUND)
             );
-            if (Boolean.TRUE.equals(detailTypeService.existsById(mapDetailType.getDetailTypeId()).getData()))
-                accMap.setDetailTypeId(mapDetailType.getDetailTypeId());
-            else
-                throw applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
+            if (mapDetailType.getDetailTypeId() != null) {
+                if (Boolean.TRUE.equals(detailTypeService.existsById(mapDetailType.getDetailTypeId()).getData()))
+                    accMap.setDetailTypeId(mapDetailType.getDetailTypeId());
+                else
+                    throw applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
+            } else
+                accMap.setDetailTypeId(null);
             accMap.setDetailTypeId(mapDetailType.getDetailTypeId());
             accMaps.add(accMap);
         }
@@ -72,6 +78,7 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
         boolean match = detailResVM.getDetailTypeResVMS().stream().anyMatch(detailTypeResVM -> Boolean.TRUE.equals(detailTypeResVM.getId().equals(accMap.getDetailTypeId())));
         if (match)
             return successCustomResponse(generalMapper.toResponseModel(accMap));
-        else throw applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
+        else
+            throw applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
 }

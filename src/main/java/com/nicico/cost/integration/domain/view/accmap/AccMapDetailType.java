@@ -6,7 +6,6 @@ import javax.validation.constraints.NotNull;
 
 @Data
 public class AccMapDetailType {
-    @NotNull
     private Long detailTypeId;
     @NotNull
     private Long accMapId;
