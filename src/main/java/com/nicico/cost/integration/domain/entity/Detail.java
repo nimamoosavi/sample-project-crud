@@ -3,7 +3,6 @@ package com.nicico.cost.integration.domain.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Formula;
-import org.hibernate.annotations.Subselect;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,8 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "TBL_DETAIL")
-@Subselect("select * from detail")
+@Table(name = "DETAIL")
 public class Detail {
 
     @Id
@@ -23,7 +21,7 @@ public class Detail {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DET_PARENT_ID",updatable = false,insertable = false)
+    @JoinColumn(name = "DET_PARENT_ID", updatable = false, insertable = false)
     private Detail parentDetail;
 
     @Column(name = "DET_PARENT_ID")

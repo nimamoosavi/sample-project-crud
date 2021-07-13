@@ -27,7 +27,7 @@ public class PeopleAccessList {
     private Long peopleId;
 
     @Setter(AccessLevel.NONE)
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ORGANIZATION_ID", nullable = false, updatable = false, insertable = false)
     private Organization organization;
 

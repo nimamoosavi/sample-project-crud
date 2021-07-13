@@ -3,7 +3,6 @@ package com.nicico.cost.integration.domain.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Formula;
-import org.hibernate.annotations.Subselect;
 
 import javax.persistence.*;
 
@@ -11,7 +10,6 @@ import javax.persistence.*;
 @Table(name = "ORGANIZATION")
 @Setter
 @Getter
-@Subselect("select * from organization")
 public class Organization {
 
 

@@ -2,7 +2,6 @@ package com.nicico.cost.integration.domain.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Subselect;
 
 import javax.persistence.*;
 
@@ -10,7 +9,6 @@ import javax.persistence.*;
 @Table(name = "PEOPLE")
 @Setter
 @Getter
-@Subselect("select * from people")
 public class People {
 
     @Id

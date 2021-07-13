@@ -2,7 +2,6 @@ package com.nicico.cost.integration.domain.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Subselect;
 
 import javax.persistence.*;
 
@@ -10,8 +9,7 @@ import javax.persistence.*;
 @Table(name = "DEPARTMENT")
 @Setter
 @Getter
-@Subselect("select * from department")
-public class Department{
+public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

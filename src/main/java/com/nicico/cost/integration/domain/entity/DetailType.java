@@ -1,14 +1,12 @@
 package com.nicico.cost.integration.domain.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.Subselect;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "TBL_DETAIL_TYPE")
-@Subselect("select * from detail_type")
+@Table(name = "DETAIL_TYPE")
 public class DetailType {
 
     @Id
