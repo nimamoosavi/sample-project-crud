@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "COST", uniqueConstraints = {
@@ -28,7 +30,7 @@ public class Cost {
     @JoinColumn(name = "ACN_ID", updatable = false, insertable = false)
     private Account account;
 
-    @Column(name = "ACN_ID",nullable = false)
+    @Column(name = "ACN_ID", nullable = false)
     private Long accountId;
 
 
@@ -77,4 +79,7 @@ public class Cost {
     @Column(name = "CENTER_DETAIL")
     @Enumerated(EnumType.STRING)
     private CenterDetail centerDetail;
+
+    @OneToMany(mappedBy = "cost")
+    private List<FormFields> fields;
 }

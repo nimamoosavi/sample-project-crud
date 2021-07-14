@@ -1,7 +1,10 @@
 package com.nicico.cost.integration.domain.view.cost;
 
 import com.nicico.cost.integration.domain.enums.CenterDetail;
+import com.nicico.cost.integration.domain.view.formfield.FormFieldsResVM;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class CostResVM {
@@ -24,4 +27,6 @@ public class CostResVM {
     private CenterDetail centerDetail;
 
     private Long accountId;
+
+    private List<FormFieldsResVM> fieldsResVMList;
 }
