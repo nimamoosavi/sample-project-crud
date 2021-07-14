@@ -1,5 +1,6 @@
 package com.nicico.cost.integration.domain.entity;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Formula;
@@ -20,6 +21,7 @@ public class Detail {
     @Column(name = "DET_ID", precision = 10)
     private Long id;
 
+    @Setter(AccessLevel.NONE)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DET_PARENT_ID", updatable = false, insertable = false)
     private Detail parentDetail;
