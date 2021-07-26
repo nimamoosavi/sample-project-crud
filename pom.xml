@@ -8,11 +8,11 @@
         <version>2.3.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.nicico.cost</groupId>
-    <artifactId>integration</artifactId>
+    <groupId>com.webold</groupId>
+    <artifactId>sample</artifactId>
     <version>1.0.1-Released</version>
-    <name>integration</name>
-    <description>Integration project for Spring Boot</description>
+    <name>crud-sample</name>
+    <description>crud-sample</description>
     <properties>
         <java.version>1.8</java.version>
         <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
@@ -35,17 +35,17 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.nicico.cost</groupId>
+            <groupId>com.webold</groupId>
             <artifactId>framework</artifactId>
             <version>1.0.1-Released</version>
         </dependency>
         <dependency>
-            <groupId>com.nicico.cost</groupId>
+            <groupId>com.webold</groupId>
             <artifactId>crud</artifactId>
             <version>1.0.1-Released</version>
         </dependency>
         <dependency>
-            <groupId>com.nicico.cost</groupId>
+            <groupId>com.webold</groupId>
             <artifactId>Jdbc-client</artifactId>
             <version>1.0.1-Released</version>
         </dependency>
