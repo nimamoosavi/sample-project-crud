@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.webold.framework.config.general.GeneralStatic.*;
+
 @RestController
 @RequestMapping(value = "/rest/integration/v1/department")
 @Api(value = "Cost-Type", protocols = "HTTP")

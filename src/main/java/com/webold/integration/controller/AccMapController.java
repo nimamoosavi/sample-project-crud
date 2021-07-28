@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static com.webold.framework.config.general.GeneralStatic.*;
+
 @RestController
 @RequestMapping(value = "/rest/integration/v1/acc-map")
 @Api(value = "Cost-Type", protocols = "HTTP")

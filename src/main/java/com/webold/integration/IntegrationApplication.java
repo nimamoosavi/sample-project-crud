@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({"com.nicico.cost.crud", "com.nicico.cost.framework", "com.nicico.cost.jdbcclient", "com.nicico.cost.integration"})
+@ComponentScan({"com.webold.crud", "com.webold.framework", "com.webold.jdbcclient", "com.webold.integration"})
 @ServletComponentScan(basePackages = {"com.nicico.cost.crud", "com.nicico.cost.framework", "com.nicico.cost.jdbcclient"})
-@EnableJpaRepositories(basePackages = {"com.nicico.cost.integration"})
+@EnableJpaRepositories(basePackages = {"com.webold.integration"})
 public class IntegrationApplication {
 
     public static void main(String[] args) {
