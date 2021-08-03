@@ -1,7 +1,7 @@
 package app.ladderproject.integration.controller;
 
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.controller.BaseController;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.view.people.PeopleReqVM;
 import app.ladderproject.integration.domain.view.people.PeopleResVM;
 import app.ladderproject.integration.service.PeopleService;
@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import static app.ladderproject.core.config.general.GeneralStatic.*;
 
 @RestController
 @RequestMapping(value = "/rest/integration/v1/people")

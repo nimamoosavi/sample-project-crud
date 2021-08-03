@@ -1,9 +1,9 @@
 package app.ladderproject.integration.service.impl;
 
+import app.ladderproject.core.anotations.Unauthorized;
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.service.impl.GeneralServiceImpl;
 import app.ladderproject.integration.repository.people.PeopleJdbcService;
-import com.webold.framework.anotations.Unauthorized;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.entity.People;
 import app.ladderproject.integration.domain.view.people.PeopleReqVM;
 import app.ladderproject.integration.domain.view.people.PeopleResVM;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-import static com.webold.framework.enums.exception.ExceptionEnum.NOTFOUND;
+import static app.ladderproject.core.enums.exception.ExceptionEnum.NOTFOUND;
 
 @Service
 @RequiredArgsConstructor

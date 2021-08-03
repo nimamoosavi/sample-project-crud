@@ -1,9 +1,9 @@
 package app.ladderproject.integration.service.impl;
 
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.service.impl.GeneralServiceImpl;
 import app.ladderproject.integration.exception.IntegrationException;
 import app.ladderproject.integration.repository.exceltemplate.ExcelTemplateJdbcService;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.entity.ExcelTemplate;
 import app.ladderproject.integration.domain.view.exceltemplate.ExcelTemplateReqVM;
 import app.ladderproject.integration.domain.view.exceltemplate.ExcelTemplateResVM;

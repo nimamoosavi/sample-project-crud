@@ -1,7 +1,7 @@
 package app.ladderproject.integration.controller;
 
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.controller.BaseController;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.view.accmap.AccMapDetailType;
 import app.ladderproject.integration.domain.view.accmap.AccMapReqVM;
 import app.ladderproject.integration.domain.view.accmap.AccMapResVM;
@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
+import static app.ladderproject.core.config.general.GeneralStatic.*;
 
 @RestController
 @RequestMapping(value = "/rest/integration/v1/acc-map")

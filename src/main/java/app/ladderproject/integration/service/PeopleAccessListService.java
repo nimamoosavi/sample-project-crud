@@ -1,7 +1,7 @@
 package app.ladderproject.integration.service;
 
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.service.GeneralService;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.view.peopleaccesslist.PeopleAccessListReqVM;
 import app.ladderproject.integration.domain.view.peopleaccesslist.PeopleAccessListResVM;
 

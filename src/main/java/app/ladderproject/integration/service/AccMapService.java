@@ -1,8 +1,8 @@
 package app.ladderproject.integration.service;
 
 
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.service.GeneralService;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.view.accmap.AccMapDetailType;
 import app.ladderproject.integration.domain.view.accmap.AccMapReqVM;
 import app.ladderproject.integration.domain.view.accmap.AccMapResVM;

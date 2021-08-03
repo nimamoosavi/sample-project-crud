@@ -1,9 +1,9 @@
 package app.ladderproject.integration.service.impl;
 
 
+import app.ladderproject.core.anotations.Unauthorized;
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.service.impl.GeneralServiceImpl;
-import com.webold.framework.anotations.Unauthorized;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.entity.Organization;
 import app.ladderproject.integration.domain.view.organization.OrganizationReqVM;
 import app.ladderproject.integration.domain.view.organization.OrganizationResVM;

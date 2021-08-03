@@ -1,7 +1,7 @@
 package app.ladderproject.integration.controller;
 
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.controller.BaseController;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.view.exceltemplate.ExcelTemplateReqVM;
 import app.ladderproject.integration.domain.view.exceltemplate.ExcelTemplateResVM;
 import app.ladderproject.integration.service.ExcelTemplateService;

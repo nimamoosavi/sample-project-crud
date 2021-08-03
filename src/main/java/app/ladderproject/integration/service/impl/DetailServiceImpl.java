@@ -1,8 +1,8 @@
 package app.ladderproject.integration.service.impl;
 
+import app.ladderproject.core.anotations.Unauthorized;
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.service.impl.TreeServiceImpl;
-import com.webold.framework.anotations.Unauthorized;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.entity.Detail;
 import app.ladderproject.integration.domain.view.detail.DetailReqVM;
 import app.ladderproject.integration.domain.view.detail.DetailResVM;

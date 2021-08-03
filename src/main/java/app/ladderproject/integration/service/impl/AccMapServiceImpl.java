@@ -1,9 +1,9 @@
 package app.ladderproject.integration.service.impl;
 
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.service.impl.GeneralServiceImpl;
 import app.ladderproject.integration.exception.IntegrationException;
 import app.ladderproject.integration.repository.accmap.AccMapJdbcService;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.entity.AccMap;
 import app.ladderproject.integration.domain.view.accmap.AccMapDetailType;
 import app.ladderproject.integration.domain.view.accmap.AccMapReqVM;
@@ -20,8 +20,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.webold.framework.enums.exception.ExceptionEnum.NOTFOUND;
-import static com.webold.framework.service.GeneralResponse.successCustomResponse;
+import static app.ladderproject.core.enums.exception.ExceptionEnum.NOTFOUND;
+import static app.ladderproject.core.service.GeneralResponse.successCustomResponse;
 
 @Service
 @RequiredArgsConstructor

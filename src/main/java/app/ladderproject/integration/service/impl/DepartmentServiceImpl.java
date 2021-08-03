@@ -1,9 +1,9 @@
 package app.ladderproject.integration.service.impl;
 
+import app.ladderproject.core.anotations.Unauthorized;
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.service.impl.GeneralServiceImpl;
 import app.ladderproject.integration.repository.department.DepartmentJdbcService;
-import com.webold.framework.anotations.Unauthorized;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.entity.Department;
 import app.ladderproject.integration.domain.view.department.DepartmentReqVM;
 import app.ladderproject.integration.domain.view.department.DepartmentResVM;
@@ -16,7 +16,8 @@ import javax.validation.constraints.NotNull;
 
 import java.util.List;
 
-import static com.webold.framework.enums.exception.ExceptionEnum.NOTFOUND;
+import static app.ladderproject.core.enums.exception.ExceptionEnum.NOTFOUND;
+
 
 @Service
 @RequiredArgsConstructor

@@ -1,8 +1,8 @@
 package app.ladderproject.integration.service.impl;
 
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.service.impl.GeneralServiceImpl;
 import app.ladderproject.integration.repository.peopleaccesslist.PeopleAccessListJdbcService;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.entity.PeopleAccessList;
 import app.ladderproject.integration.domain.view.peopleaccesslist.PeopleAccessListReqVM;
 import app.ladderproject.integration.domain.view.peopleaccesslist.PeopleAccessListResVM;
@@ -14,8 +14,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class PeopleAccessListServiceImpl extends
-        GeneralServiceImpl<PeopleAccessList, PeopleAccessListReqVM, PeopleAccessListResVM, Long> implements PeopleAccessListService {
+public class PeopleAccessListServiceImpl extends GeneralServiceImpl<PeopleAccessList, PeopleAccessListReqVM, PeopleAccessListResVM, Long> implements PeopleAccessListService {
 
     private final PeopleAccessListJdbcService peopleAccessListJdbcService;
 

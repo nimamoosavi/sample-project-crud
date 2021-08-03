@@ -1,8 +1,8 @@
 package app.ladderproject.integration.controller;
 
+import app.ladderproject.core.anotations.Unauthorized;
+import app.ladderproject.core.domain.dto.BaseDTO;
 import app.ladderproject.crud.controller.BaseController;
-import com.webold.framework.anotations.Unauthorized;
-import com.webold.framework.domain.dto.BaseDTO;
 import app.ladderproject.integration.domain.view.account.AccountReqVM;
 import app.ladderproject.integration.domain.view.account.AccountResVM;
 import io.swagger.annotations.Api;
