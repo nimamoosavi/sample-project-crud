@@ -1,6 +1,6 @@
 package app.ladderproject.integration.exception;
 
-import com.webold.framework.utility.view.Message;
+import app.ladderproject.core.utility.view.Message;
 import lombok.Getter;
 
 @Getter

@@ -22,6 +22,7 @@ import java.util.List;
 
 import static app.ladderproject.core.enums.exception.ExceptionEnum.NOTFOUND;
 import static app.ladderproject.core.service.GeneralResponse.successCustomResponse;
+import static app.ladderproject.integration.exception.IntegrationException.DETAIL_TYPE_NOT_FOUND;
 
 @Service
 @RequiredArgsConstructor
@@ -41,7 +42,7 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
             if (Boolean.TRUE.equals(detailTypeService.existsById(mapDetailType.getDetailTypeId()).getData()))
                 accMap.setDetailTypeId(mapDetailType.getDetailTypeId());
             else
-                throw applicationException.createApplicationException(IntegrationException.DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
+                throw applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
         } else
             accMap.setDetailTypeId(null);
         AccMap map = accMapJdbcService.save(accMap);
@@ -59,7 +60,7 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
                 if (Boolean.TRUE.equals(detailTypeService.existsById(mapDetailType.getDetailTypeId()).getData()))
                     accMap.setDetailTypeId(mapDetailType.getDetailTypeId());
                 else
-                    throw applicationException.createApplicationException(IntegrationException.DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
+                    throw applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
             } else
                 accMap.setDetailTypeId(null);
             accMap.setDetailTypeId(mapDetailType.getDetailTypeId());
@@ -79,6 +80,6 @@ class AccMapServiceImpl extends GeneralServiceImpl<AccMap, AccMapReqVM, AccMapRe
         if (match)
             return successCustomResponse(generalMapper.toResponseModel(accMap));
         else
-            throw applicationException.createApplicationException(IntegrationException.DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
+            throw applicationException.createApplicationException(DETAIL_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
 }
