@@ -19,10 +19,7 @@ public abstract class UserMapper extends GeneralMapper<User, UserReqVM, UserResV
     UserInfoMapper userInfoMapper;
 
     @AfterMapping
-    private void mapBaseObjectToResponse(@MappingTarget UserResVM target, User source) {
-        if (source.getUserInfo() != null) {
-            UserInfoResVM userInfoResVM = userInfoMapper.mapBaseObjectToResponse(source.getUserInfo()).getData();
-            target.setUserInfoResVM(userInfoResVM);
-        }
+    public void mapBaseObjectToResponse(@MappingTarget UserResVM target, User source) {
+        // This creates just for learn That how to map and used another Mapper service
     }
 }
