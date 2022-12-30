@@ -55,6 +55,12 @@
             <version>${org.mapstruct.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>app.ladderproject</groupId>
+            <artifactId>discovery-client</artifactId>
+            <version>1.0.1-Released</version>
+        </dependency>
+
         <!--SWAGGER-->
         <dependency>
             <groupId>io.springfox</groupId>

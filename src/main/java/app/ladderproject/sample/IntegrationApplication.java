@@ -12,12 +12,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * this project create for learn how we can use our project in some microservice, and we hope that help us
  * to create faster and change it enjoyable
  * our pleasure to star our main project and fork of that in our GitHub
- * {@link https://github.com/nimamoosavi/core}
+ * {@link <a href="https://github.com/nimamoosavi/core">...</a>}
  * Thanks a lot
+ *
  * @author nima
  */
 @SpringBootApplication
-@ComponentScan({"app.ladderproject.crud", "app.ladderproject.core", "app.ladderproject.jdbcclient", "app.ladderproject.sample"})
+@ComponentScan({"app.ladderproject.crud", "app.ladderproject.core", "app.ladderproject.jdbcclient", "app.ladderproject.sample", "app.ladderproject.discovery-client"})
 @ServletComponentScan(basePackages = {"app.ladderproject.crud", "app.ladderproject.core", "app.ladderproject.jdbcclient"})
 @EnableJpaRepositories(basePackages = {"app.ladderproject.sample"})
 public class IntegrationApplication {
