@@ -5,7 +5,6 @@ import app.ladderproject.crud.mapper.GeneralMapper;
 import app.ladderproject.sample.domain.entity.User;
 import app.ladderproject.sample.domain.view.user.UserReqVM;
 import app.ladderproject.sample.domain.view.user.UserResVM;
-import app.ladderproject.sample.domain.view.userinfo.UserInfoResVM;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
